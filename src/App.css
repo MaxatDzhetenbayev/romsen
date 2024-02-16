@@ -40,3 +40,27 @@
 .read-the-docs {
   color: #888;
 }
+
+.right-stuff{
+  max-width: 250px;
+  display: 'flex';
+  flex-direction: 'column';
+  justify-content: center;
+  gap: 20px;
+}
+
+
+
+.car-top{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #888;
+}
+
+.car-bottom{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: coral;
+}

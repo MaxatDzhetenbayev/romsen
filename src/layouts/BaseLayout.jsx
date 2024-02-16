@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom"
+import { Aside } from "../components/Aside/Aside"
 
 export const BaseLayout = () => {
     return (
@@ -17,9 +18,9 @@ export const BaseLayout = () => {
                 </header>
                 <Outlet />
             </main>
-            <aside>
+            <Aside>
                 покупки
-            </aside>
+            </Aside>
         </div>
     )
 }
