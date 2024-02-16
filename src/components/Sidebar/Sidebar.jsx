@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Sidebar.module.css";
 import PizzaIcon from "./icons/pizza.svg";
 import SetsIcon from "./icons/sets.svg";
@@ -26,6 +25,7 @@ export default function Sidebar() {
         {navlinks.map(({ path, name, icon }) => (
           <NavLink
             to={path}
+            key={name}
             className={({ isActive }) =>
               clsx(styles.link, isActive && styles.activeLink)
             }
