@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Sidebar.module.css";
 import Logo from "/logo.png";
 import { NavLink } from "react-router-dom";
@@ -16,6 +15,7 @@ export default function Sidebar() {
         {navlinks.map(({ path, name, icon }) => (
           <NavLink
             to={path}
+            key={name}
             className={({ isActive }) =>
               clsx(styles.link, isActive && styles.activeLink)
             }
