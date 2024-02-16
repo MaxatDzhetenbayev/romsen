@@ -6,7 +6,7 @@ export const BaseLayout = () => {
             display: 'grid',
             gridTemplateColumns: '1fr 3fr 1fr'
         }}>
-            <aside>
+            <aside >
                 <nav>
                     навишация
                 </nav>
@@ -23,3 +23,7 @@ export const BaseLayout = () => {
         </div>
     )
 }
+
+
+
+
