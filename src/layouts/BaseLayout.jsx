@@ -1,5 +1,7 @@
 import { Outlet } from "react-router-dom"
 import { Aside } from "../components/Aside/Aside"
+import Sidebar from "../components/Sidebar/Sidebar"
+import { Header } from "../components/Header/Header"
 
 export const BaseLayout = () => {
     return (
@@ -7,19 +9,13 @@ export const BaseLayout = () => {
             display: 'grid',
             gridTemplateColumns: '1fr 3fr 1fr'
         }}>
-            <aside >
-                <nav>
-                    навишация
-                </nav>
-            </aside>
+            <Sidebar/>
+            
             <main>
-                <header>
-
-                </header>
+                <Header/>
                 <Outlet />
             </main>
             <Aside>
-                покупки
             </Aside>
         </div>
     )

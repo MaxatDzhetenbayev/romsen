@@ -1,0 +1,48 @@
+.wrapper {
+  margin-left: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logo > h2 {
+  font-weight: 300;
+}
+.logo > img {
+  max-width: 130px;
+  width: 100%;
+  height: 100%;
+}
+.divider{
+  margin: 20px 0 20px 0;
+}
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.link {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: black;
+}
+.link:hover {
+  color: var(--primary-color);
+}
+.activeLink {
+  color: var(--primary-color);
+}
+.link > span {
+  font-size: 24px;
+}
+
+.link > svg {
+  width: 28px;
+}
