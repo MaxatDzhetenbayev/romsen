@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom"
+import Sidebar from "../components/Sidebar/Sidebar"
 
 export const BaseLayout = () => {
     return (
@@ -6,11 +7,8 @@ export const BaseLayout = () => {
             display: 'grid',
             gridTemplateColumns: '1fr 3fr 1fr'
         }}>
-            <aside >
-                <nav>
-                    навишация
-                </nav>
-            </aside>
+            <Sidebar/>
+            
             <main>
                 <header>
 
