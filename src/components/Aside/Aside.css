@@ -1,0 +1,54 @@
+
+  .right-stuff{
+    max-width: 250px;
+    display: 'flex';
+    align-items: center;
+    gap: 20px;
+  }
+  .car, .google-map{
+    display: flex;
+    flex-direction: column;
+  }
+  .car{
+    display: flex;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 25px;
+    padding-bottom: 10px;
+  }
+  
+  .google-map{
+    padding-left: 10px;
+    padding-right: 25px;
+    padding-bottom: 2px;
+  }
+  .car-top{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #F2F2F2;
+    padding: 10px;
+  }
+  
+  .car-bottom{
+    display: flex;
+    align-items: center;
+    background-color: #F46D40;
+    padding: 7px;
+    color: gray;
+    font-size: smaller;
+  }
+
+  .map-bottom{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #F2F2F2;
+  }
+  .small-text{
+    font-size: x-small;
+    color: gray;
+  }
+  button{
+    border: none;
+  }
