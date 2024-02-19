@@ -1,14 +1,16 @@
 import styles from "./Sidebar.module.css";
-import PizzaIcon from "./icons/pizza.svg";
-import SetsIcon from "./icons/sets.svg";
-import WOkIcon from "./icons/wok.svg";
-import RollsIcon from "./icons/rolls.svg";
-import SushiIcon from "./icons/sushi.svg";
-import SalatIcon from "./icons/salat.svg";
-import SoupIcon from "./icons/soup.svg";
-import CornIcon from "./icons/corn.svg";
-import DrinkIcon from "./icons/drink.svg";
-import SalesIcon from "./icons/sales.svg";
+import {
+  PizzaIcon,
+  SalatIcon,
+  SetsIcon,
+  WOkIcon,
+  RollsIcon,
+  SushiIcon,
+  SoupIcon,
+  CornIcon,
+  DrinkIcon,
+  SalesIcon,
+} from "./icons";
 import Logo from "/logo.png";
 import { NavLink } from "react-router-dom";
 import clsx from "clsx";
