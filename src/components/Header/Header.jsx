@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import styles from './Hedaer.module.css'
 export const Header = () => {
     return (
@@ -12,14 +14,14 @@ export const Header = () => {
                 </section>
             </section>
             <section className={styles.header__right}>
-                <section>
+                <section className={styles.header__city}>
                     <p>Город:</p>
-                    <h3>Казахстан</h3>
+                    <button onClick={() => { alert("city") }}>Казахстан</button>
                 </section>
-                <section>
-                    <section>
-                        <a href="">Отзывы</a>
-                        <a href="">Доставка и оплата</a>
+                <section className={styles.navigation}>
+                    <section className={styles.navigation__links}>
+                        <Link to="#">Отзывы</Link>
+                        <Link to="#">Доставка и оплата</Link>
                     </section>
                     <button>
                         <img src="svgs/find.svg" alt="" />
