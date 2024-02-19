@@ -1,5 +1,7 @@
 
   .right-stuff{
+    margin-top: 20px;
+    margin-right: 35px;
     max-width: 250px;
     display: 'flex';
     align-items: center;
@@ -32,10 +34,11 @@
   
   .car-bottom{
     display: flex;
-    align-items: center;
-    background-color: #F46D40;
+    flex-direction: column;
+    text-align: center;
+    background-color: #FF9846;
     padding: 7px;
-    color: gray;
+    color: #F5DBC7;
     font-size: smaller;
   }
 
@@ -44,10 +47,13 @@
     flex-direction: column;
     text-align: center;
     background-color: #F2F2F2;
+    padding-top: 10px;
   }
   .small-text{
-    font-size: x-small;
-    color: gray;
+    font-size: small;
+    color: #C1C6C7;
+    margin-top: 7px;
+    margin-bottom: 7px;
   }
   button{
     border: none;
