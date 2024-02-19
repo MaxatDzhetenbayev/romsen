@@ -4,14 +4,28 @@ import styles from "./Slider.module.css";
 import { Link } from "react-router-dom";
 export const Slider = ({ products }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const openNextSlide = () => {};
-  const openPrevSlide = () => {};
+  let downX = 0;
   const openSlide = (slideNumber) => {
     setCurrentSlide(slideNumber);
   };
+  function handleDrag(e) {
+    if (downX - e.clientX > 400) {
+      setCurrentSlide(0);
+    } else {
+      setCurrentSlide(1);
+    }
+  }
+  function handleDown(e) {
+    downX = e.clientX;
+  }
   return (
     <div className={styles.wrapper}>
-      <Link to={products[currentSlide].to}>
+      <Link
+        to={products[currentSlide].to}
+        draggable
+        onDrag={handleDrag}
+        onMouseDown={handleDown}
+      >
         <img
           src={products[currentSlide].img}
           alt="product "
