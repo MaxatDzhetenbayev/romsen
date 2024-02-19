@@ -1,8 +1,8 @@
-import './Hedaer.css'
+import styles from './Hedaer.module.css'
 
 export const Header = () => {
     return (
-        <header className='header'>
+        <header className={styles.header}>
             <section className="header__contact">
                 <h3>Наш телефон:</h3>
                 <a href="tel:+996705188955">+996 705 188 955</a>
