@@ -1,6 +1,9 @@
+import { NewProducts } from "../../components/NewProducts/NewProducts"
 
 export const MainPage = () => {
   return (
-    <div>MainPage</div>
+    <div>
+      <NewProducts/>
+    </div>
   )
 }

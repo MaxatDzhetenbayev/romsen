@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom"
 import { Aside } from "../components/Aside/Aside"
 
+
 export const BaseLayout = () => {
     return (
         <div style={{
