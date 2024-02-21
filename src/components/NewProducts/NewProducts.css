@@ -1,0 +1,22 @@
+
+.newProds{
+    display: flex;;
+    justify-content: center;
+    gap: 40px;
+    max-width: 600px;
+}
+
+.prod{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+
+.prodMainText{
+    display: flex;
+    align-items: center;
+    align-self: center;
+}
+
+.prodBottom{
+    
+}

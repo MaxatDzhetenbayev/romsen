@@ -1,0 +1,54 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bannerWrapper {
+  position: relative;
+}
+.overlay {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.productBanner {
+  width: 100%;
+  height: 100%;
+  max-width: 750px;
+  max-height: 470px;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
+
+.dotsWrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  cursor: pointer;
+  background: var(--color-gray);
+}
+.activeDot {
+  width: 12px;
+  height: 12px;
+
+  background: var(--primary-color);
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Start with opacity 0 */
+  }
+  to {
+    opacity: 1; /* End with opacity 1 */
+  }
+}
