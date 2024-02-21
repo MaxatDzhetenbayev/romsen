@@ -1,4 +1,3 @@
-
 import { NewProducts } from "../../components/NewProducts/NewProducts";
 import { Categories } from "../../components/Сategories/Сategories";
 import{TextAbout} from "../../components/TextAbout/TextAbout";
@@ -7,8 +6,8 @@ export const MainPage = () => {
   return (
     <div>
       <SpotlightSlider />
-      <Categories/>
-      <NewProducts/>
+      <Categories />
+      <NewProducts />
       <TextAbout/>
     </div>
   );
