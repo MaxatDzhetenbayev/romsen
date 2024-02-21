@@ -1,20 +1,29 @@
-.wrapper {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 50% 25% 25%;
-    grid-gap: 10px;
-    justify-content: center;
-    width: 950px;
-    height: 430px;
-  }
-h4{
- font-family:'DIN Pro';
- width: 69px;
- height: 30px;;
-  }
-.pizza{
-grid-column: 1/2;
+.categories_item {
+  max-width: 100%;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
 }
-.stocks{
-grid-column: 2/4;
+
+
+.categories_item img {
+  display: flex;
+  flex: 1;
+}
+
+.categories_item h1 {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  text-decoration: none;
+  color: #fff;
+}
+
+.last_item {
+  grid-area: 2 / 2 / span 2 / span 2;
+}
+
+.last_item h1{
+  bottom: 20%;
+  left: 5%;
 }
