@@ -1,33 +1,50 @@
+import { Link } from 'react-router-dom'
 import styles from './Categories.module.css'
-import Chicken from "./pictures/chiken.png";
-import Corndog from "./pictures/corndog.png";
-import Eel from "./pictures/eel.png";
-import Stocks from "./pictures/stocks.png";
-import Pizza from "./pictures/pizza.png";
+import clsx from 'clsx'
+const categoriesItemList = [
+    {
+        text: "Чикен",
+        img: "categories/chiken.png",
+        link: "categories/chiken"
+    },
+    {
+        text: "C угрем",
+        img: "categories/eel.png",
+        link: "categories/eel"
+    },
+    {
+        text: "Корндог",
+        img: "categories/corndog.png",
+        link: "categories/corndog"
+    },
+    {
+        text: "Пицца",
+        img: "categories/pizza.png",
+        link: "categories/pizza"
+    },
+    {
+        text: "Акции",
+        img: "categories/stocks.png",
+        link: "categories/stocks"
+    },
+]
+
 
 export const Categories = () => {
     return (
-       <section className={styles.wrapper}>
-        <div className={styles.chicken}>
-            <h4>Чикен</h4>
-            <img src= {Chicken}></img>
-        </div>
-        <div className={styles.eel}>
-             <h4>C угрем</h4>
-            <img src= {Eel}></img>
-        </div>
-        <div className={styles.corndog}>
-            <h4>Корндог</h4>
-            <image src= {Corndog}></image>
-        </div>
-        <div className={styles.pizza}>
-            <h4>Пицца</h4>
-            <img src= {Pizza}></img>
-        </div>
-        <div className={styles.stocks}>
-            <h4>Акции</h4>
-            <img src= {Stocks}></img>
-        </div>
-       </section>
+        <section className='container__small' style={{ marginTop: 30 }}>
+            <section className={styles.categories_list}>
+                {
+                    categoriesItemList.map(({ text, img, link }, idx) => (
+                        <Link key={img} to={link} className={clsx(styles.categories_item, idx === categoriesItemList.length - 1 ? styles.last_item : "")}>
+                            <article >
+                                <img src={img} alt={text} />
+                                <h1>{text}</h1>
+                            </article>
+                        </Link>
+                    ))
+                }
+            </section>
+        </section>
     )
 }

@@ -1,6 +1,29 @@
-.wrapper {
-    display: grid;
-    grid-template-rows: 2fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr ;
-    grid-gap: 2vw;
-  }
+.categories_item {
+  max-width: 100%;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+
+.categories_item img {
+  display: flex;
+  flex: 1;
+}
+
+.categories_item h1 {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  text-decoration: none;
+  color: #fff;
+}
+
+.last_item {
+  grid-area: 2 / 2 / span 2 / span 2;
+}
+
+.last_item h1{
+  bottom: 20%;
+  left: 5%;
+}

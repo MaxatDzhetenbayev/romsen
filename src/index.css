@@ -13,3 +13,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.container__small{
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.container__large{
+  max-width: 830px;
+  margin: 0 auto;
+}
