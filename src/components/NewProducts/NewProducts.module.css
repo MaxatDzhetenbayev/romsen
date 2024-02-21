@@ -1,0 +1,8 @@
+.new_products{
+    max-width: 800px;
+}
+
+.product_item{
+    display: flex;
+    justify-content: center;
+}
