@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Slider.module.css";
 import { Link } from "react-router-dom";
 export const Slider = ({ products }) => {
@@ -8,11 +8,30 @@ export const Slider = ({ products }) => {
   const openSlide = (slideNumber) => {
     setCurrentSlide(slideNumber);
   };
+  const nextSlide = () => {
+    setCurrentSlide((prevIndex) =>
+      prevIndex === products.length - 1 ? 0 : prevIndex + 1,
+    );
+  };
+  const prevSlide = () => {
+    setCurrentSlide((prevIndex) =>
+      prevIndex === 0 ? products.length - 1 : prevIndex - 1,
+    );
+  };
+  useEffect(() => {
+    let timeout = setTimeout(() => {
+      nextSlide();
+    }, 5000);
+    return () => clearTimeout(timeout);
+  }, []);
   function handleDrag(e) {
-    if (downX - e.clientX > 400) {
-      setCurrentSlide(0);
+    //get drag direction
+    if (downX - e.clientX < 0) {
+      //left
+      e.clientX === 0 && prevSlide();
     } else {
-      setCurrentSlide(1);
+      //right
+      e.clientX === 0 && nextSlide();
     }
   }
   function handleDown(e) {
@@ -20,18 +39,25 @@ export const Slider = ({ products }) => {
   }
   return (
     <div className={styles.wrapper}>
-      <Link
-        to={products[currentSlide].to}
-        draggable
-        onDrag={handleDrag}
-        onMouseDown={handleDown}
-      >
-        <img
-          src={products[currentSlide].img}
-          alt="product "
-          className={styles.productBanner}
-        />
-      </Link>
+      {products.map(({ img, to }, idx) => (
+        <Link
+          to={to}
+          key={idx}
+          style={{
+            display: idx === currentSlide ? "block" : "none",
+          }}
+        >
+          <div className={styles.bannerWrapper}>
+            <div
+              className={styles.overlay}
+              draggable
+              onDrag={handleDrag}
+              onMouseDown={handleDown}
+            />
+            <img src={img} alt="product " className={styles.productBanner} />
+          </div>
+        </Link>
+      ))}
       <Dots
         length={products.length}
         openSlide={openSlide}
