@@ -1,6 +1,20 @@
 .wrapper {
     display: grid;
-    grid-template-rows: 2fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr ;
-    grid-gap: 2vw;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 50% 25% 25%;
+    grid-gap: 10px;
+    justify-content: center;
+    width: 950px;
+    height: 430px;
   }
+h4{
+ font-family:'DIN Pro';
+ width: 69px;
+ height: 30px;;
+  }
+.pizza{
+grid-column: 1/2;
+}
+.stocks{
+grid-column: 2/4;
+}
