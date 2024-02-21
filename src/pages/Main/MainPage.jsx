@@ -4,11 +4,13 @@ const products = [
   { img: "/logo.png", to: "#" },
 ];
 import { NewProducts } from "../../components/NewProducts/NewProducts"
+import { Categories } from "../../components/Сategories/Сategories";
 
 export const MainPage = () => {
   return (
     <div>
       <ProductsSlider products={products} />
+      <Categories/>
       <NewProducts/>
     </div>
   );
