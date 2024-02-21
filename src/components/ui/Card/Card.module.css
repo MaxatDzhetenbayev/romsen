@@ -10,7 +10,7 @@
 .top {
   display: flex;
   flex-direction: column;
-
+  height: 82%;
   padding: 0 17px 20px 17px;
   gap: 30px 0;
 }
@@ -41,4 +41,9 @@
 }
 .bottom > span {
   font-weight: 600;
+}
+@media (max-width: 1600px) {
+  .wrapper {
+    font-size: 18px;
+  }
 }
