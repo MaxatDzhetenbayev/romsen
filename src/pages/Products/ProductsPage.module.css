@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+}
+.type {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.type > h1 {
+  font-size: 36px;
+  font-weight: 400;
+}
+.list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+}

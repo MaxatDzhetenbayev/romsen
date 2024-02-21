@@ -1,5 +1,4 @@
-
-import { NewProducts } from "../../components/NewProducts/NewProducts"
+import { NewProducts } from "../../components/NewProducts/NewProducts";
 import { Categories } from "../../components/Сategories/Сategories";
 
 import { SpotlightSlider } from "../../components/SpotlightSlider/SpotlightSlider";
@@ -8,8 +7,8 @@ export const MainPage = () => {
     <div>
       <SpotlightSlider />
 
-      <Categories/>
-      <NewProducts/>
+      <Categories />
+      <NewProducts />
     </div>
   );
 };

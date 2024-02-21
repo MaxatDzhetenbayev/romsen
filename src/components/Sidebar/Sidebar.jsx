@@ -45,12 +45,12 @@ const navlinks = [
   {
     name: "Пицца",
     icon: <img src={PizzaIcon} alt="Pizza icon" />,
-    path: "#",
+    path: "/pizza",
   },
   {
     name: "Сеты",
     icon: <img src={SetsIcon} alt="Sets icon" />,
-    path: "#",
+    path: "/sets",
   },
   {
     name: "WOK",
