@@ -1,0 +1,12 @@
+.container{
+    width: 950px;
+    justify-content: center;
+    color: #A4ACAD;
+}
+.button{
+    height: 24px;
+    width: 145px;
+    color:  #F46D40;
+    justify-content: center;
+    border: 1px;
+}
