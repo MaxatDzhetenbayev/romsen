@@ -3,6 +3,7 @@ import { Aside } from "../components/Aside/Aside"
 import Sidebar from "../components/Sidebar/Sidebar"
 import { Header } from "../components/Header/Header"
 import styles from './BaseLayouts.module.css'
+import { Footer } from "../components/Footer/Footer"
 
 export const BaseLayout = () => {
     return (
@@ -15,9 +16,10 @@ export const BaseLayout = () => {
             <main className={styles.main}>
                 <Header/>
                 <Outlet />
+                <Footer/>
             </main>
-            <Aside>
-            </Aside>
+            <Aside/>
+         
         </div>
     )
 }
