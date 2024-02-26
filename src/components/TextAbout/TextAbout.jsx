@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 
 import styles from './TextAbout.module.css'
+
 export function TextAbout() {
+
   const [isHide, setIsHide] = useState(true);
   return (
     <section className={styles.container}>
