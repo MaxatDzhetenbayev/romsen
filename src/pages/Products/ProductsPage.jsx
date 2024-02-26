@@ -1,12 +1,76 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Card } from "../../components/ui/Card/Card";
-import { PizzaIcon, SetsIcon } from "../../components/Sidebar/icons";
+import {
+  CornIcon,
+  DrinkIcon,
+  PizzaIcon,
+  RollsIcon,
+  SalatIcon,
+  SetsIcon,
+  SoupIcon,
+  SushiIcon,
+  WOkIcon,
+  StockIcon,
+} from "../../components/Sidebar/icons";
 import styles from "./ProductsPage.module.css";
 import clsx from "clsx";
 
 const productsList = {
-  pizza: [],
+  pizza: new Array(9).fill({
+    img: "/sets/salomon.jpg",
+    name: "Саломон сет",
+    desc: "1050 грамм, 30 кусочков",
+    price: "1500 СОМ",
+  }),
+  wok: new Array(9).fill({
+    img: "/sets/salomon.jpg",
+    name: "Саломон сет",
+    desc: "1050 грамм, 30 кусочков",
+    price: "1500 СОМ",
+  }),
+  rolls: new Array(9).fill({
+    img: "/sets/salomon.jpg",
+    name: "Саломон сет",
+    desc: "1050 грамм, 30 кусочков",
+    price: "1500 СОМ",
+  }),
+  sushi: new Array(9).fill({
+    img: "/sets/salomon.jpg",
+    name: "Саломон сет",
+    desc: "1050 грамм, 30 кусочков",
+    price: "1500 СОМ",
+  }),
+  salats: new Array(9).fill({
+    img: "/sets/salomon.jpg",
+    name: "Саломон сет",
+    desc: "1050 грамм, 30 кусочков",
+    price: "1500 СОМ",
+  }),
+  soups: new Array(9).fill({
+    img: "/sets/salomon.jpg",
+    name: "Саломон сет",
+    desc: "1050 грамм, 30 кусочков",
+    price: "1500 СОМ",
+  }),
+  corndogs: new Array(9).fill({
+    img: "/sets/salomon.jpg",
+    name: "Саломон сет",
+    desc: "1050 грамм, 30 кусочков",
+    price: "1500 СОМ",
+  }),
+  drinks: new Array(9).fill({
+    img: "/sets/salomon.jpg",
+    name: "Саломон сет",
+    desc: "1050 грамм, 30 кусочков",
+    price: "1500 СОМ",
+  }),
+  stock: new Array(9).fill({
+    img: "/sets/salomon.jpg",
+    name: "Саломон сет",
+    desc: "1050 грамм, 30 кусочков",
+    price: "1500 СОМ",
+  }),
   sets: [
     {
       img: "/sets/salomon.jpg",
@@ -64,6 +128,7 @@ const productsList = {
     },
   ],
 };
+
 const productsTypes = {
   sets: {
     name: "Сеты",
@@ -72,6 +137,38 @@ const productsTypes = {
   pizza: {
     name: "Пицца",
     icon: PizzaIcon,
+  },
+  wok: {
+    name: "WOK",
+    icon: WOkIcon,
+  },
+  rolls: {
+    name: "Роллы",
+    icon: RollsIcon,
+  },
+  sushi: {
+    name: "Суши",
+    icon: SushiIcon,
+  },
+  salats: {
+    name: "Салаты",
+    icon: SalatIcon,
+  },
+  soups: {
+    name: "Супы",
+    icon: SoupIcon,
+  },
+  corndogs: {
+    name: "Корн доги",
+    icon: CornIcon,
+  },
+  drinks: {
+    name: "Напитки",
+    icon: DrinkIcon,
+  },
+  stock: {
+    name: "Акции",
+    icon: StockIcon,
   },
 };
 export const ProductsPage = () => {
