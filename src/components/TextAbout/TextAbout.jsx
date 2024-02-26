@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-
+import { useState } from 'react'
 import './TextAbout.module.css'
 export function TextAbout() {
+
   const [isHide, setIsHide] = useState(true);
   return (
     <section className='container'>
