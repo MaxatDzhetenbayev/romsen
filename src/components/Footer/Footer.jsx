@@ -17,7 +17,7 @@ export const Footer = () => {
                     <Link to=""> Доставка и оплата </Link>
                 </div>
 
-                <div className={styles.content}>
+                <div className={styles.center}>
                     <p className={styles.content_paragraph}>Введите номер</p>
                     <p>8 ___-___-__-__</p>
                     <p> </p>
@@ -30,9 +30,9 @@ export const Footer = () => {
                     </section>
                 </div>
 
-                <div className={styles.content}>
-                    <p className='underlined'>Тел: 87077777474</p>
-                    <p className='underlined'>Тел: 87070007474</p>
+                <div className={styles.right}>
+                    <p>Тел: <a  href="tel:+7077777474">87077777474</a></p>
+                    <p>Тел: <a href="tel:+7070007474">87070007474</a></p>
                     <p>Адрес: Бакаева 126</p>
                 </div>
 
