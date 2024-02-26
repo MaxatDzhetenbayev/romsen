@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 
-import './TextAbout.module.css'
+import styles from './TextAbout.module.css'
 export function TextAbout() {
   const [isHide, setIsHide] = useState(true);
   return (
-    <section className='container'>
-      <h4 className='heading'>Заказать суши в Бишкеке</h4>
-      <p className='content' style={{ height: isHide ? "300px" : "100%", overflow: "hidden" }}>
+    <section className={styles.container}>
+      <p className={styles.heading}>Заказать суши в Бишкеке</p>
+      <p className={styles.content} style={{ height: isHide ? "300px" : "100%", overflow: "hidden" }}>
         Ресторан “Суши и Лапша” предлагаем своим клиентам самые вкусные суши с доставкой на дом, приготовленные по классическим и адаптированным к европейской аудитории рецептам, а также собственным наработкам наших поваров. Мы ценим время наших клиентов, поэтому вы можете заказать суши в Харькове с доставкой на дом или в офис.
-        <p>В нашем меню более 20 видов суши:</p>
+        В нашем меню более 20 видов суши:
         <ul>
           <li>Классические с сырым лососем, тунцом, окунем.</li>
           <li>Экзотические с тигровой креветкой, морским гребешком.</li>
@@ -22,7 +22,7 @@ export function TextAbout() {
         Пикантные с копченым лососем, угрем.
         В меню также представлены гунканы: с начинкой из красной икры и тобико, а также феликсы, где японский майонез сочетается с рыбой, морепродуктами, угрем. Любители острых блюд могут купить суши с соусом спайси. Популярные начинки — копченая курица, снежный краб, креветки, гребешки, тунец, лосось и окунь.
       </p>
-      <button className='button' onClick={() => setIsHide(!isHide)} > {isHide ? "Показать" : "Скрыть"} Подробнее</button>
+      <button className={styles.button} onClick={() => setIsHide(!isHide)} > {isHide ? "Подробнее" : "Скрыть"}</button>
     </section>
   );
 }
