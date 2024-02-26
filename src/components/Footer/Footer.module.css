@@ -12,7 +12,10 @@
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    font-size: medium;
+    gap: 10px;
 }
+
 
 .content:last-child{
     border: none;
@@ -25,6 +28,11 @@
     font-size: larger;
 }
 
+.content a:hover {
+    color: grey;
+    transform: scale(1.1);
+    transition: 0.2s;
+}
 .center{
     padding : 40px 20px; 
     display: flex;
@@ -41,4 +49,27 @@
 
 p{
     font-size: larger;
+}
+
+.underlined{
+    text-decoration: underline;
+}
+
+.socials{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+img{
+    max-width: 50px;
+    max-height: 50px;
+    display: flex;
+    flex-direction: row;
+    opacity: 0.5;
+}
+img:hover{
+    opacity: 1;
+    transform: scale(1.1);
+    transition: 0.2s;
 }
