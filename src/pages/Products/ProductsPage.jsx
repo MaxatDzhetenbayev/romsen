@@ -15,6 +15,7 @@ import {
 } from "../../components/Sidebar/icons";
 import styles from "./ProductsPage.module.css";
 import clsx from "clsx";
+import { SortSelect } from "../../components/SortSelect/SortSelect";
 
 const productsList = {
   pizza: new Array(9).fill({
@@ -185,6 +186,7 @@ export const ProductsPage = () => {
           <img src={productsTypes[type].icon} alt={`${type} icon`} />
           <h1>{productsTypes[type].name}</h1>
         </div>
+        <SortSelect sortProduct={() => {}} />
       </section>
       <section className={styles.list}>
         {products.map(({ img, name, desc, price }) => (
