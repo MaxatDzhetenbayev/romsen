@@ -9,19 +9,19 @@ import {
   SoupIcon,
   CornIcon,
   DrinkIcon,
-  SalesIcon,
+   StockIcon,
 } from "./icons";
 import Logo from "/logo.png";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import clsx from "clsx";
 
 export default function Sidebar() {
   return (
     <aside className={styles.wrapper}>
-      <div className={styles.logo}>
+      <Link to="/" className={styles.logo}>
         <img alt="logo" src={Logo} />
         <h2>ROMSEM</h2>
-      </div>
+      </Link>
       <hr className={styles.divider} />
       <nav className={styles.nav}>
         {navlinks.map(({ path, name, icon }) => (
@@ -45,53 +45,53 @@ const navlinks = [
   {
     name: "Пицца",
     icon: <img src={PizzaIcon} alt="Pizza icon" />,
-    path: "/pizza",
+    path: "/categories/pizza",
   },
   {
     name: "Сеты",
     icon: <img src={SetsIcon} alt="Sets icon" />,
-    path: "/sets",
+    path: "/categories/sets",
   },
   {
     name: "WOK",
     icon: <img src={WOkIcon} alt="Wok icon" />,
-    path: "#",
+    path: "/categories/wok",
   },
   {
     name: "Роллы",
     icon: <img src={RollsIcon} alt="Rolls icon" />,
-    path: "#",
+    path: "/categories/rolls",
   },
   {
     name: "Суши",
     icon: <img src={SushiIcon} alt="sushi icon" />,
-    path: "#",
+    path: "/categories/sushi",
   },
   {
     name: "Салаты",
     icon: <img src={SalatIcon} alt="salat icon" />,
-    path: "#",
+    path: "/categories/salats",
   },
   {
     name: "Супы",
     icon: <img src={SoupIcon} alt="soup icon" />,
-    path: "#",
+    path: "/categories/soups",
   },
   {
     name: "Корн доги",
     icon: <img src={CornIcon} alt="corn icon" />,
-    path: "#",
+    path: "/categories/corndogs",
   },
   {
     name: "Напитки",
     icon: <img src={DrinkIcon} alt="drink icon" />,
 
-    path: "#",
+    path: "/categories/drinks",
   },
   {
     name: "Акции",
-    icon: <img src={SalesIcon} alt="sales icon" />,
+    icon: <img src={StockIcon} alt="sales icon" />,
 
-    path: "#",
+    path: "/categories/stock",
   },
 ];

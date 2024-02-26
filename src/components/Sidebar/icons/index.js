@@ -7,7 +7,7 @@ import SalatIcon from "./salat.svg";
 import SoupIcon from "./soup.svg";
 import CornIcon from "./corn.svg";
 import DrinkIcon from "./drink.svg";
-import SalesIcon from "./sales.svg";
+import StockIcon from "./sales.svg";
 export {
   PizzaIcon,
   SalatIcon,
@@ -18,5 +18,5 @@ export {
   SoupIcon,
   CornIcon,
   DrinkIcon,
-  SalesIcon,
+  StockIcon ,
 };

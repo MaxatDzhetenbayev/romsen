@@ -1,12 +1,22 @@
 .container{
     width: 950px;
-    justify-content: center;
+    display: flex;
+    border-bottom: 1px solid #A4ACAD;
+    align-items: center;
     color: #A4ACAD;
+    max-width: 950px;
 }
 .button{
     height: 24px;
     width: 145px;
     color:  #F46D40;
-    justify-content: center;
+    align-items: center;
     border: 1px;
+}
+.content{
+    color: #A4ACAD;
+    font-size: 18px;
+}
+.heading{
+    font-size: 24px;
 }
