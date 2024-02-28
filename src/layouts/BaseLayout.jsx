@@ -8,11 +8,10 @@ import { TextAbout } from "../components/TextAbout/TextAbout"
 
 export const BaseLayout = () => {
     return (
-        <div style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 3fr 1fr'
-        }}>
-            <Sidebar />
+        <div className={styles.base_layout}>
+            <div className={styles.elems_to_hide}>
+                <Sidebar />
+            </div>
 
             <p className={styles.main}>
                 <Header />
@@ -20,7 +19,9 @@ export const BaseLayout = () => {
                 <TextAbout />
                 <Footer />
             </p>
-            <Aside />
+            <div className={styles.elems_to_hide}>
+                <Aside />
+            </div>
 
         </div>
     )
