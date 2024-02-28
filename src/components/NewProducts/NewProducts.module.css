@@ -1,8 +1,21 @@
-.new_products{
-    max-width: 800px;
-}
 
 .product_item{
-    display: flex;
-    justify-content: center;
+    display: grid;
+    flex-direction: column;
+    
+    padding: 19px 9px 10px;
+
+    background-color: #fff;
+}
+
+.product_item img{
+    width: 100%;
+}
+
+.product_item header {
+    max-width: 200px;
+}
+
+.product_item footer{
+    border-top: 1px solid #A4ACAD;
 }
