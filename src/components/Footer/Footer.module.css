@@ -66,9 +66,7 @@
     color: #000;
 }
 
-p{
-    font-size: larger;
-}
+
 
 .underlined{
     font-size: larger;
@@ -81,15 +79,6 @@ p{
     gap: 40px;
 }
 
-img{
-    max-width: 50px;
-    max-height: 50px;
-    display: flex;
-    flex-direction: row;
-    opacity: 0.5;
-}
-img:hover{
-    opacity: 1;
-    transform: scale(1.1);
-    transition: 0.2s;
+.socials img{
+    width: 50px;
 }
