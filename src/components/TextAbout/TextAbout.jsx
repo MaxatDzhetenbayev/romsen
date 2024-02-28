@@ -1,9 +1,16 @@
-import  { useState } from 'react'
+import { useState } from 'react'
 import styles from './TextAbout.module.css'
-
+import './TextAbout.module.css'
 export function TextAbout() {
 
   const [isHide, setIsHide] = useState(true);
+
+  function handleSetIsHide() {
+    setIsHide(!isHide)
+    console.log('worked')
+  };
+
+
   return (
     <section className="container__small">
       <section className={styles.container} >
@@ -27,7 +34,16 @@ export function TextAbout() {
             В меню также представлены гунканы: с начинкой из красной икры и тобико, а также феликсы, где японский майонез сочетается с рыбой, морепродуктами, угрем. Любители острых блюд могут купить суши с соусом спайси. Популярные начинки — копченая курица, снежный краб, креветки, гребешки, тунец, лосось и окунь.
           </p>
         </section>
-        <button className={styles.button} onClick={() => setIsHide(!isHide)} > {isHide ? "Подробнее " : "Скрыть"} </button>
+        <div>
+          <button className={styles.button} onClick={() => handleSetIsHide()} > {isHide ? "Подробнее " : "Скрыть"}
+            <img
+              src="public/button/Vector4.png"
+              className={isHide ?  '' : styles.rotated}
+            />
+          </button>
+
+
+        </div>
       </section>
     </section>
   );
