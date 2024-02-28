@@ -1,4 +1,4 @@
-.container{
+.container {
     margin-top: 60px;
     color: #A4ACAD;
     font-size: 18px;
@@ -7,28 +7,33 @@
     align-items: center;
 
 }
-.content{
+
+.content {
     color: #A4ACAD;
     font-size: 18px;
     margin: top;
 }
 
-p{
+.container p {
     text-align: justify;
 }
-.heading{
+
+
+.heading {
     font-size: 24px;
     margin: top;
 }
-ul{
-    font-size: 18px; 
+
+ul {
+    font-size: 18px;
     margin: 5px;
-    list-style-type: disc; 
+    list-style-type: disc;
 }
-button{
+
+.button {
     font-size: 24px;
     width: 145px;
-    color:  #F46D40;
+    color: #F46D40;
     margin: 10px;
-    
+
 }

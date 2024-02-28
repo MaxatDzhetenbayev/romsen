@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import styles from './TextAbout.module.css'
 
 export function TextAbout() {
@@ -27,7 +27,7 @@ export function TextAbout() {
             В меню также представлены гунканы: с начинкой из красной икры и тобико, а также феликсы, где японский майонез сочетается с рыбой, морепродуктами, угрем. Любители острых блюд могут купить суши с соусом спайси. Популярные начинки — копченая курица, снежный краб, креветки, гребешки, тунец, лосось и окунь.
           </p>
         </section>
-        <button onClick={() => setIsHide(!isHide)} > {isHide ? "Подробнее " : "Скрыть"} </button>
+        <button className={styles.button} onClick={() => setIsHide(!isHide)} > {isHide ? "Подробнее " : "Скрыть"} </button>
       </section>
     </section>
   );
