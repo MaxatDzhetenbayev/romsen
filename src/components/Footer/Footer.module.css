@@ -91,3 +91,24 @@
     opacity: 1;
     border-radius: 50%;
 }
+
+
+@media (max-width: 360px) {
+    .footer{
+        display: block;
+    }
+    .content{
+        display: flex;
+        align-items: center;
+    }
+
+    .right{
+        display: flex;
+        align-items: center;
+    }
+
+    .center{
+        display: flex;
+        align-items: center;
+    }
+}
