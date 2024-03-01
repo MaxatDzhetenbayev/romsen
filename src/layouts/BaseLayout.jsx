@@ -9,14 +9,19 @@ import { TextAbout } from "../components/TextAbout/TextAbout"
 export const BaseLayout = () => {
     return (
         <div className={styles.base_layout}>
-            <Sidebar />
+            <div className={styles.elems_to_hide}>
+                <Sidebar />
+            </div>
             <div className={styles.main}>
                 <Header />
                 <Outlet />
                 <TextAbout />
                 <Footer />
             </div>
-            <Aside />
+            <div className={styles.elems_to_hide}>
+                <Aside />
+            </div>
+
         </div>
     )
 }
