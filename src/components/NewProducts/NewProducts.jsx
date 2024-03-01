@@ -11,6 +11,8 @@ import 'swiper/css/navigation';
 // import required modules
 import { FreeMode, Navigation } from 'swiper/modules';
 
+
+
 const newProductList = [
     {
         name: "Саламон сет",
@@ -55,22 +57,32 @@ export const NewProducts = () => {
                 modules={[Navigation, FreeMode]}
                 className={style.new_products}
                 slidesPerView={3}
-                spaceBetween={10}
                 autoHeight={true}
+                style={{ height: 350 }}
+                breakpoints={{
+                    340: {
+                        slidesPerView: 2,
+                        spaceBetween: 10,
+                    },
+                    640: {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                    },
+                }}
             >
                 {newProductList.map((item) => (
                     <SwiperSlide
                         key={item.desc}>
                         <article className={style.product_item}>
                             <img src={item.img} alt={item.name} />
-                        <header>
-                            <h1>{item.name}</h1>
-                            <p>{item.desc}</p>
-                        </header>
-                        <footer>
-                            <p>{item.price}</p>
-                            <button>Хочу!</button>
-                        </footer>
+                            <header>
+                                <h1>{item.name}</h1>
+                                <p>{item.desc}</p>
+                            </header>
+                            <footer>
+                                <p>{item.price} ТЕНГЕ</p>
+                                <button color={"orange"}>Хочу!</button>
+                            </footer>
                         </article>
                     </SwiperSlide>
                 ))}

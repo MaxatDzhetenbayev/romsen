@@ -10,17 +10,17 @@ import { CartContext } from "../context/cart.context";
 import { Cart } from "../components/Cart/Cart";
 
 export const BaseLayout = () => {
+
   const { products } = useContext(CartContext);
   return (
     <div className={styles.base_layout}>
       <Sidebar className={styles.elems_to_hide} />
-
-      <p className={styles.main}>
+      <div className={styles.main}>
         <Header />
         <Outlet />
         <TextAbout />
         <Footer />
-      </p>
+      </div>
       {products.length === 0 ? (
         <Aside className={styles.elems_to_hide} />
       ) : (
