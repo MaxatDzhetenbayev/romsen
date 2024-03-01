@@ -1,0 +1,19 @@
+.menu_categories {
+    display: none;
+    
+}
+
+
+@media  (max-width: 380px) {
+    .menu_categories {
+        display: grid;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 5px;
+        margin-right: 5px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+    }
+}
