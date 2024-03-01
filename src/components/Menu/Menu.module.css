@@ -4,7 +4,7 @@
 }
 
 
-@media  (max-width: 380px) {
+@media  (max-width: 360px) {
     .menu_categories {
         display: grid;
         margin-top: 20px;

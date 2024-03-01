@@ -93,7 +93,7 @@
 }
 
 
-@media (max-width: 380px) {
+@media (max-width: 360px) {
     .footer{
         display: block;
     }
