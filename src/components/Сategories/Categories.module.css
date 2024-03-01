@@ -33,10 +33,3 @@
   bottom: 20%;
   left: 5%;
 }
-
-
-@media (max-width: 380px) {
-  .categories_list{
-    display: none;
-  }
-}
