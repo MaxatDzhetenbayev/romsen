@@ -76,9 +76,41 @@
 .socials{
     display: flex;
     flex-direction: row;
-    gap: 40px;
+    gap: 35px;
 }
 
 .socials img{
     width: 50px;
+    opacity: 0.5;
+    border-radius: 50%;
+}
+
+.socials img:hover{
+    transform: scale(1.1);
+    transition: 0.2s;
+    opacity: 1;
+    border-radius: 50%;
+}
+
+
+@media (max-width: 600px) {
+    .footer{
+        display: block;
+    }
+    .content{
+        display: flex;
+        align-items: center;
+    }
+
+    .right{
+        display: flex;
+        align-items: center;
+    }
+
+    .center{
+        display: flex;
+        align-items: center;
+        padding: 0px;
+        text-align: center;
+    }
 }

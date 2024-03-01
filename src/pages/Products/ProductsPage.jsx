@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useReducer } from "react";
 import { useParams } from "react-router-dom";
 import { Card } from "../../components/ui/Card/Card";
 import {
@@ -21,115 +21,132 @@ const productsList = {
   pizza: new Array(9).fill({
     img: "/sets/salomon.jpg",
     name: "Саломон сет",
-    desc: "1050 грамм, 30 кусочков",
-    price: "1500 СОМ",
+    grams: "1050",
+    pieces: "30",
+    price: "1500",
   }),
   wok: new Array(9).fill({
     img: "/sets/salomon.jpg",
     name: "Саломон сет",
-    desc: "1050 грамм, 30 кусочков",
-    price: "1500 СОМ",
+    grams: "1050",
+    pieces: "30",
+    price: "1500",
   }),
   rolls: new Array(9).fill({
     img: "/sets/salomon.jpg",
     name: "Саломон сет",
-    desc: "1050 грамм, 30 кусочков",
-    price: "1500 СОМ",
+    grams: "1050",
+    pieces: "30",
+    price: "1500",
   }),
   sushi: new Array(9).fill({
     img: "/sets/salomon.jpg",
     name: "Саломон сет",
-    desc: "1050 грамм, 30 кусочков",
-    price: "1500 СОМ",
+    grams: "1050",
+    pieces: "30",
+    price: "1500",
   }),
   salats: new Array(9).fill({
     img: "/sets/salomon.jpg",
     name: "Саломон сет",
-    desc: "1050 грамм, 30 кусочков",
-    price: "1500 СОМ",
+    grams: "1050",
+    pieces: "30",
+    price: "1500",
   }),
   soups: new Array(9).fill({
     img: "/sets/salomon.jpg",
     name: "Саломон сет",
-    desc: "1050 грамм, 30 кусочков",
-    price: "1500 СОМ",
+    grams: "1050",
+    pieces: "30",
+    price: "1500",
   }),
   corndogs: new Array(9).fill({
     img: "/sets/salomon.jpg",
     name: "Саломон сет",
-    desc: "1050 грамм, 30 кусочков",
-    price: "1500 СОМ",
+    grams: "1050",
+    pieces: "30",
+    price: "1500",
   }),
   drinks: new Array(9).fill({
     img: "/sets/salomon.jpg",
     name: "Саломон сет",
-    desc: "1050 грамм, 30 кусочков",
-    price: "1500 СОМ",
+    grams: "1050",
+    pieces: "30",
+    price: "1500",
   }),
   stock: new Array(9).fill({
     img: "/sets/salomon.jpg",
     name: "Саломон сет",
-    desc: "1050 грамм, 30 кусочков",
-    price: "1500 СОМ",
+    grams: "1050",
+    pieces: "30",
+    price: "1500",
   }),
   sets: [
     {
       img: "/sets/salomon.jpg",
       name: "Саломон сет",
-      desc: "1050 грамм, 30 кусочков",
-      price: "1500 СОМ",
+      grams: "1050",
+      pieces: "30",
+      price: "1500",
     },
     {
       img: "/sets/phila.png",
       name: "Сет '5 Филадельфий'",
-      desc: "1120 грамм 40 кусочек",
-      price: "1499 СОМ",
+      grams: "1120",
+      pieces: "40",
+      price: "1499",
     },
     {
       img: "/sets/phila2.png",
       name: "Филадельфия и лосось сет",
-      desc: "1260 грамм 36 кусочек",
-      price: "1499 СОМ",
+      grams: "1260",
+      pieces: "36",
+      price: "1499",
     },
     {
       img: "/sets/phila3.png",
       name: "Сет '6 Филадельфий'",
-      desc: "1320 грамм 46 кусочек",
-      price: "1559 СОМ",
+      grams: "1320",
+      pieces: "46",
+      price: "1559",
     },
     {
       img: "/sets/top.png",
       name: "Топовый сет",
-      desc: "1020 грамм 40 кусочек",
-      price: "1519 СОМ",
+      grams: "1020",
+      pieces: "40",
+      price: "1519",
     },
     {
       img: "/sets/kamikadze.png",
       name: "Камикадзе сет",
-      desc: "1200 грамм 52 кусочек",
-      price: "1469 СОМ",
+      grams: "1200",
+      pieces: "52",
+      price: "1469",
     },
     {
       img: "/sets/phila4.png",
       name: "Сет '4 Филадельфии'",
-      desc: "1100 грамм 32 кусочек",
-      price: "1559 СОМ",
+      grams: "1100",
+      pieces: "32",
+      price: "1559",
     },
     {
       img: "/sets/philalove.png",
       name: "Филадельфия LOVE сет",
-      desc: "1000 грамм 40 кусочек",
-      price: "1479 СОМ",
+      grams: "1000",
+      pieces: "40",
+      price: "1479",
     },
     {
       img: "/sets/yakudza.png",
       name: "Якудза сет",
-      desc: "1270 грамм 50 кусочек",
-      price: "1499 СОМ",
+      grams: "1270",
+      pieces: "50",
+      price: "1499",
     },
   ],
 };
-
 const productsTypes = {
   sets: {
     name: "Сеты",
@@ -172,13 +189,32 @@ const productsTypes = {
     icon: StockIcon,
   },
 };
+const sortReducer = (state, action) => {
+  if (action.type == "base") return [...productsList["sets"]];
+  const sorted = state.sort((a, b) => {
+    if (!action.type.includes("price")) {
+      return a[action.type] - b[action.type];
+    }
+    if (action.type.includes("low")) {
+      return a[action.type.split("-")[0]] - b[action.type.split("-")[0]];
+    } else {
+      return b[action.type.split("-")[0]] - a[action.type.split("-")[0]];
+    }
+  });
+  return [...sorted];
+};
 export const ProductsPage = () => {
   const { type } = useParams();
+  const [sortedProducts, dispatch] = useReducer(
+    sortReducer,
+    productsList["sets"]
+  );
+
+  const sortProduct = (type) => {
+    dispatch({ type });
+  };
+  console.log(sortedProducts);
   if (!type) return <></>;
-  const [products, setProducts] = useState(productsList[type]);
-  useEffect(() => {
-    setProducts(productsList[type]);
-  }, [type]);
   return (
     <section className={clsx("container__large", styles.wrapper)}>
       <section className={styles.header}>
@@ -186,11 +222,16 @@ export const ProductsPage = () => {
           <img src={productsTypes[type].icon} alt={`${type} icon`} />
           <h1>{productsTypes[type].name}</h1>
         </div>
-        <SortSelect sortProduct={() => {}} />
+        <SortSelect sortProduct={sortProduct} />
       </section>
       <section className={styles.list}>
-        {products.map(({ img, name, desc, price }) => (
-          <Card img={img} name={name} desc={desc} price={price} />
+        {sortedProducts.map(({ img, name, grams, pieces, price }) => (
+          <Card
+            img={img}
+            name={name}
+            desc={`${grams} грамм и  ${pieces} кусочков`}
+            price={price + " COM"}
+          />
         ))}
       </section>
     </section>
