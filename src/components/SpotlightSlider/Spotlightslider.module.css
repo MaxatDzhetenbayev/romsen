@@ -1,0 +1,5 @@
+@media (max-width: 1200px) {
+    .elems_to_hide {
+      display: none;
+    }
+}
