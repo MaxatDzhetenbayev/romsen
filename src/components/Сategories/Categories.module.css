@@ -1,4 +1,4 @@
-.categories_list{
+.categories_list {
   margin-top: 30px;
   display: grid;
   gap: 15px;
@@ -29,7 +29,34 @@
   grid-area: 2 / 2 / span 2 / span 2;
 }
 
-.last_item h1{
+.last_item h1 {
   bottom: 20%;
   left: 5%;
+}
+
+@media screen and (max-width: 360px) {
+  .categories_list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 160px);
+  }
+
+  .categories_item:nth-child(1),
+  .categories_item:nth-child(5) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .categories_item img {
+    width: 100%;
+  }
+
+  .categories_item:nth-child(4) {
+    display: none;
+
+  }
+
+  .last_item {
+    grid-area: auto;
+  }
+
 }
