@@ -2,3 +2,22 @@
     background-color: #F2F2F2;
     padding: 0px 15px;
 }
+
+
+.base_layout{
+    display: 'grid';
+    grid-template-columns: '1fr 3fr 1fr';
+
+}
+
+
+@media (max-width: 1200px) {
+    .elems_to_hide {
+      display: none;
+    }
+
+    .base_layout{
+        display: block;
+    }
+  }
+
