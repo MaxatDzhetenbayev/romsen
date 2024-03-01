@@ -8,9 +8,33 @@
   position: absolute;
   right: 0;
   font-size: 16px;
+  overflow: hidden;
+  transition: max-height 0.6s;
+}
+.opened {
+  max-height: 300px;
+}
+.opened .expandable {
+  opacity: 1;
+}
+
+.closed {
+  max-height: 70px;
+}
+.closed .expandable {
+  opacity: 0;
 }
 .shadow {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.arrow {
+  transition: 200ms linear all;
+}
+.down {
+  transform: rotate(0deg);
+}
+.up {
+  transform: rotate(180deg);
 }
 .title {
   font-size: 14px;
@@ -38,5 +62,7 @@
 .option:hover {
   color: var(--primary-color);
 }
-.option :active {
+
+.expandable {
+  transition: opacity 0.6s;
 }

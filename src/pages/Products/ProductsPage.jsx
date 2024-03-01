@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useState } from "react";
+import { useReducer } from "react";
 import { useParams } from "react-router-dom";
 import { Card } from "../../components/ui/Card/Card";
 import {
@@ -190,10 +190,10 @@ const productsTypes = {
   },
 };
 const sortReducer = (state, action) => {
-  if (action.type == "base") return state;
+  if (action.type == "base") return [...productsList["sets"]];
   const sorted = state.sort((a, b) => {
     if (!action.type.includes("price")) {
-      return a[action.value] - b[action.value];
+      return a[action.type] - b[action.type];
     }
     if (action.type.includes("low")) {
       return a[action.type.split("-")[0]] - b[action.type.split("-")[0]];
@@ -201,7 +201,7 @@ const sortReducer = (state, action) => {
       return b[action.type.split("-")[0]] - a[action.type.split("-")[0]];
     }
   });
-  return sorted;
+  return [...sorted];
 };
 export const ProductsPage = () => {
   const { type } = useParams();
