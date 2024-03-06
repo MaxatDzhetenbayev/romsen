@@ -4,7 +4,6 @@ import Sidebar from "../components/Sidebar/Sidebar";
 import { Header } from "../components/Header/Header";
 import styles from "./BaseLayouts.module.css";
 import { Footer } from "../components/Footer/Footer";
-import { TextAbout } from "../components/TextAbout/TextAbout";
 import { useContext } from "react";
 import { CartContext } from "../context/cart.context";
 import { Cart } from "../components/Cart/Cart";
@@ -18,7 +17,6 @@ export const BaseLayout = () => {
       <div className={styles.main}>
         <Header />
         <Outlet />
-        <TextAbout />
         <Footer />
       </div>
       {products.length === 0 ? (
