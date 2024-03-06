@@ -1,6 +1,6 @@
 .wrapper {
-  width: 430px;
-  padding: 55px 100px 10px 40px;
+  width: 360px;
+  padding: 55px 10px 10px 40px;
   display: flex;
   gap: 10px;
   flex-direction: column;
@@ -30,4 +30,19 @@
 }
 .buyButton {
   font-size: 18px;
+}
+.opened {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: white;
+  z-index: 1000;
+  height: 100%;
+}
+
+@media (max-width: 400px) {
+  /* .wrapper {
+    background-color: white;
+    height: 100%;
+  } */
 }

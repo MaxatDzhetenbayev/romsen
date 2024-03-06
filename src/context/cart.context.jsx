@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const CartContext = createContext();
 
@@ -10,6 +10,7 @@ export const CartProvider = ({ children }) => {
   const closeCart = () => {
     setOpen(false);
   };
+  
   const [products, setProducts] = useState([
     {
       img: "/sets/philalove.png",
@@ -19,7 +20,6 @@ export const CartProvider = ({ children }) => {
       price: "1479",
       quantity: 1,
     },
-   
   ]);
   const addToCart = () => {};
   const removeFromCart = () => {};

@@ -7,10 +7,10 @@ import { Footer } from "../components/Footer/Footer";
 import { useContext } from "react";
 import { CartContext } from "../context/cart.context";
 import { Cart } from "../components/Cart/Cart";
+import { MobileMenu } from "../components/MobileMenu/MobileMenu";
 
 export const BaseLayout = () => {
-
-  const { products } = useContext(CartContext);
+  const { products, open } = useContext(CartContext);
   return (
     <div className={styles.base_layout}>
       <Sidebar className={styles.elems_to_hide} />
@@ -19,11 +19,8 @@ export const BaseLayout = () => {
         <Outlet />
         <Footer />
       </div>
-      {products.length === 0 ? (
-        <Aside className={styles.elems_to_hide} />
-      ) : (
-        <Cart className={styles.elems_to_hide} />
-      )}
+      <Cart />
+      <MobileMenu />
     </div>
   );
 };
