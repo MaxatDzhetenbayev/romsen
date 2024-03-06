@@ -1,6 +1,6 @@
 import styles from "./Card.module.css";
 import { Button } from "../Button/Button";
-export const Card = ({ img, name, desc, price,to }) => {
+export const Card = ({ img, name, desc, price, to }) => {
   return (
     <section className={styles.wrapper}>
       <section className={styles.top}>

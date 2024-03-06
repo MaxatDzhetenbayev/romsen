@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Card } from "../../components/ui/Card/Card";
 import {
@@ -190,7 +190,8 @@ const productsTypes = {
   },
 };
 const sortReducer = (state, action) => {
-  if (action.type == "base") return [...productsList["sets"]];
+  if (action.type == "fetch") return [...action.payload];
+  if (action.type == "base") return [...state];
   const sorted = state.sort((a, b) => {
     if (!action.type.includes("price")) {
       return a[action.type] - b[action.type];
@@ -205,15 +206,25 @@ const sortReducer = (state, action) => {
 };
 export const ProductsPage = () => {
   const { type } = useParams();
-  const [sortedProducts, dispatch] = useReducer(
-    sortReducer,
-    productsList["sets"]
-  );
 
+  const [sortedProducts, dispatch] = useReducer(sortReducer, []);
+  console.log(sortedProducts);
   const sortProduct = (type) => {
     dispatch({ type });
   };
-  console.log(sortedProducts);
+  //https://65e830004bb72f0a9c4e817e.mockapi.io/api/v1/products?
+  useEffect(() => {
+    fetch(
+      `https://65e830004bb72f0a9c4e817e.mockapi.io/api/v1/products?category=${type}`
+    )
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Error, ", res.status);
+        }
+        return res.json();
+      })
+      .then((res) => dispatch({ type: "fetch", payload: res }));
+  }, [type]);
   if (!type) return <></>;
   return (
     <section className={clsx("container__large", styles.wrapper)}>
@@ -225,9 +236,9 @@ export const ProductsPage = () => {
         <SortSelect sortProduct={sortProduct} />
       </section>
       <section className={styles.list}>
-        {sortedProducts.map(({ img, name, grams, pieces, price }) => (
+        {sortedProducts.map(({ imagePath, name, grams, pieces, price }) => (
           <Card
-            img={img}
+            img={imagePath}
             name={name}
             desc={`${grams} грамм и  ${pieces} кусочков`}
             price={price + " COM"}
