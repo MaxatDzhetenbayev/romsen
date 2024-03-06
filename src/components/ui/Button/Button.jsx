@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 export const Button = ({
   isLink = false,
   children,
+  size = "base",
   className,
   color,
   ...props
@@ -14,9 +15,10 @@ export const Button = ({
       <Link
         to={props.to}
         className={clsx(
-          className,
           styles.button,
-          { orange: styles.orange, black: styles.black }[color]
+          { orange: styles.orange, black: styles.black }[color],
+          { base: styles.baseSize, small: styles.smallSize }[size],
+          className
         )}
       >
         {children}
@@ -25,9 +27,10 @@ export const Button = ({
   return (
     <button
       className={clsx(
-        className,
         styles.button,
-        { orange: styles.orange, black: styles.black }[color]
+        { orange: styles.orange, black: styles.black }[color],
+        { base: styles.baseSize, small: styles.smallSize }[size],
+        className
       )}
       {...props}
     >

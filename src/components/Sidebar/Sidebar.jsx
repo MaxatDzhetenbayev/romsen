@@ -9,15 +9,15 @@ import {
   SoupIcon,
   CornIcon,
   DrinkIcon,
-   StockIcon,
+  StockIcon,
 } from "./icons";
 import Logo from "/logo.png";
 import { Link, NavLink } from "react-router-dom";
 import clsx from "clsx";
 
-export default function Sidebar() {
+export default function Sidebar({ className }) {
   return (
-    <aside className={styles.wrapper}>
+    <aside className={clsx(className, styles.wrapper)}>
       <Link to="/" className={styles.logo}>
         <img alt="logo" src={Logo} />
         <h2>ROMSEM</h2>
