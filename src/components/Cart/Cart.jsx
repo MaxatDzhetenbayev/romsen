@@ -4,10 +4,11 @@ import { CartContext } from "../../context/cart.context";
 import styles from "./Cart.module.css";
 import { Button } from "../ui/Button/Button";
 import clsx from "clsx";
+import { Aside } from "../Aside/Aside";
 export const Cart = ({ className }) => {
   const { products, totalPrice, open } = useContext(CartContext);
   return (
-    <div className={clsx(open && styles.opened)}>
+    <div className={clsx(styles.wrap, open && styles.opened)}>
       {products.length === 0 ? (
         <Aside className={className} />
       ) : (
