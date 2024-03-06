@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { BaseLayout } from "./layouts/BaseLayout.jsx";
 import { ProductsPage } from "./pages/Products/ProductsPage.jsx";
 import { CartProvider } from "./context/cart.context.jsx";
+import { PaymentPage } from "./pages/PaymentPage/PaymentPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
         element: <MainPage />,
       },
       { path: "/categories/:type", element: <ProductsPage /> },
+      { path: "/payment/", element: <PaymentPage /> }
     ],
   },
 ]);
