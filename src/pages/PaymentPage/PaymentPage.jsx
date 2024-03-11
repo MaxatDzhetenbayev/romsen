@@ -1,7 +1,9 @@
+import { useState } from 'react'
+import { Input } from '../../components/ui/Input/Input'
 import styles from './PaymentPage.module.css'
 
 export const PaymentPage = () => {
-
+    const [isCardMethod, setIsCardMethod] = useState(false)
 
     return (
         <section className={styles.payment}>
@@ -18,22 +20,22 @@ export const PaymentPage = () => {
                 </header>
                 <section className={styles.payment_wrapper}>
                     <h1>ВАШИ ДАННЫЕ</h1>
-                    <form className={styles.payment_userForm}>
+                    <section className={styles.payment_userInfo}>
                         <section className={styles.payment_order}>
-                            <input type="text" placeholder='Телефон' className={styles.payment_order_phone} />
-                            <input type="text" placeholder='Имя' className={styles.payment_order_name} />
+                            <Input type="text" placeholder='Телефон' classNames={[styles.payment_order_phone]}/>
+                            <Input type="text" placeholder='Имя' classNames={[styles.payment_order_name]}/>
                             <section className={styles.payment_order_payment_methods}>
-                                <button>наличными</button>
-                                <button>Картой</button>
+                                <button onClick={() => setIsCardMethod(false)} className={!isCardMethod && styles.payment_order_payment_method_choice }>наличными</button>
+                                <button onClick={() => setIsCardMethod(true)} className={isCardMethod && styles.payment_order_payment_method_choice }>Картой</button>
                             </section>
                             <section className={styles.payment_order_payment_surrender}>
                                 <input type="checkbox" />
                                 <p>Подготовить сдачу с</p>
                             </section>
-                            <input type="text" placeholder='Сумма' className={styles.payment_order_payment_surrender_button} />
-                            <input type="text" placeholder='Комменатрий к заказу' className={styles.payment_order_payment_comments} />
-                            <ul>
-                                <li>
+                            <Input type="text" placeholder='Сумма' classNames={[styles.payment_order_payment_surrender_button]}/>
+                            <Input type="text" placeholder='Комменатрий к заказу' classNames={[styles.payment_order_payment_comments]}/>
+                            <ul className={styles.payment_order_payment_items_list}>
+                                <li className={styles.payment_order_payment_items_item}>
                                     <p>Пицца с пепперони</p>
                                     <div>
                                         <button>-</button>
@@ -42,10 +44,10 @@ export const PaymentPage = () => {
                                     </div>
                                 </li>
                             </ul>
-                            <input type="text" placeholder='Введите промокод' className={styles.payment_order_payment_promo} />
+                            <Input type="text" placeholder='Введите промокод' classNames={[styles.payment_order_payment_promo]}/>
                         </section>
                         <section className={styles.payment_personal}></section>
-                    </form>
+                    </section>
                 </section>
             </section>
             <section className={styles.payment_cart}>
