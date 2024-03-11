@@ -14,7 +14,7 @@ export const CartProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const addToCart = (product) => {
     if (!isProductAdded(product.id)) {
-      setProducts([...products, { ...product, quantity: 1 }]);
+      setProducts([...products, { ...product, quantity: 1, defaultPrice : product.price }]);
       return;
     }
     increaseQuantity(product.id);
@@ -42,7 +42,7 @@ export const CartProvider = ({ children }) => {
           return {
             ...p,
             quantity: p.quantity + 1,
-            price: p.price * (p.quantity + 1),
+            price: p.price + p.defaultPrice ,
           };
         } else {
           return p;
@@ -55,7 +55,11 @@ export const CartProvider = ({ children }) => {
       prev
         .map((p) => {
           if (p.id === productId) {
-            return { ...p, quantity: p.quantity - 1 };
+            return {
+              ...p,
+              quantity: p.quantity - 1,
+              price: p.price - p.defaultPrice,
+            };
           } else {
             return p;
           }

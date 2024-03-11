@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   margin: 30px 0;
-  position: relative;
 }
 .type {
   display: flex;
@@ -18,10 +17,24 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 40px;
 }
+.sortWrapper {
+  position: relative;
+  height: 70px;
+}
 
-@media (max-width: 400px) {
+@media (max-width: 530px) {
   .list {
     grid-template-columns: 1fr;
     justify-items: center;
   }
+}
+
+@media (max-width: 440px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+  }
+
 }
