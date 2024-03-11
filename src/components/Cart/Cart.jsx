@@ -6,7 +6,8 @@ import { Button } from "../ui/Button/Button";
 import clsx from "clsx";
 import { Aside } from "../Aside/Aside";
 export const Cart = ({ className }) => {
-  const { products, totalPrice, open } = useContext(CartContext);
+  const { products, totalPrice, open,  } =
+    useContext(CartContext);
   return (
     <div className={clsx(styles.wrap, open && styles.opened)}>
       {products.length === 0 ? (
@@ -17,7 +18,7 @@ export const Cart = ({ className }) => {
             <CartItem key={idx} product={product} />
           ))}
           <div className={styles.bottom}>
-            <span className={styles.totalPrice}>{totalPrice} COM</span>
+            <span className={styles.totalPrice}>{totalPrice} TEНГЕ</span>
             <Button size="small" color="orange">
               Оформить заказ
             </Button>
