@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useState } from "react";
+import { useContext, useEffect, useReducer, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Card } from "../../components/ui/Card/Card";
 import {
@@ -16,6 +16,7 @@ import {
 import styles from "./ProductsPage.module.css";
 import clsx from "clsx";
 import { SortSelect } from "../../components/SortSelect/SortSelect";
+import { CartContext } from "../../context/cart.context";
 
 const productsList = {
   pizza: new Array(9).fill({
@@ -208,7 +209,7 @@ export const ProductsPage = () => {
   const { type } = useParams();
 
   const [sortedProducts, dispatch] = useReducer(sortReducer, []);
-  console.log(sortedProducts);
+  const { addToCart } = useContext(CartContext);
   const sortProduct = (type) => {
     dispatch({ type });
   };
@@ -223,7 +224,10 @@ export const ProductsPage = () => {
         }
         return res.json();
       })
-      .then((res) => dispatch({ type: "fetch", payload: res }));
+      .then((res) => {
+        dispatch({ type: "fetch", payload: res });
+        console.log(res);
+      });
   }, [type]);
   if (!type) return <></>;
   return (
@@ -236,12 +240,16 @@ export const ProductsPage = () => {
         <SortSelect sortProduct={sortProduct} />
       </section>
       <section className={styles.list}>
-        {sortedProducts.map(({ imagePath, name, grams, pieces, price }) => (
+        {sortedProducts.map((p) => (
           <Card
-            img={imagePath}
-            name={name}
-            desc={`${grams} грамм и  ${pieces} кусочков`}
-            price={price + " COM"}
+            key={p.id}
+            add={() => {
+              addToCart(p);
+            }}
+            img={p.imagePath}
+            name={p.name}
+            desc={`${p.grams} грамм и  ${p.pieces} кусочков`}
+            price={p.price + " TEНГЕ"}
           />
         ))}
       </section>
