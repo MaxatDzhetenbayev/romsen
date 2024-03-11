@@ -237,7 +237,9 @@ export const ProductsPage = () => {
           <img src={productsTypes[type].icon} alt={`${type} icon`} />
           <h1>{productsTypes[type].name}</h1>
         </div>
+        <div className={styles.sortWrapper}>
         <SortSelect sortProduct={sortProduct} />
+        </div>
       </section>
       <section className={styles.list}>
         {sortedProducts.map((p) => (
