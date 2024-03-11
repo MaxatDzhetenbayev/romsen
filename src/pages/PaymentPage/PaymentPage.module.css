@@ -1,0 +1,77 @@
+.payment {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    min-height: 100vh;
+}
+
+.payment_content {
+    background-color: #F2F2F2;
+}
+
+.payment_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 7px 16px;
+    border-bottom: 1px solid var(--color-gray);
+}
+
+
+.payment_header>a {
+    color: #FF9846;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.payment_header>h3 {
+    font-size: 16px;
+}
+
+.header__working_hous {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.header__working_hous>p {
+    color: #A4ACAD;
+    font-size: 14px;
+    padding-bottom: 3px;
+}
+
+
+/* !order-form-group-start */
+
+.payment_order {
+    display: grid;
+    grid-template-areas:
+        'payment_order_phone payment_order_name'
+        'payment_order_payment_methods payment_order_payment_methods'
+        'payment_order_payment_surrender payment_order_payment_surrender'
+}
+
+.payment_order_phone {
+    grid-area: payment_order_phone;
+}
+
+.payment_order_name {
+    grid-area: payment_order_name;
+}
+
+.payment_order_payment_methods {
+    grid-area: payment_order_payment_methods;
+    display: flex;
+}
+
+.payment_order_payment_methods button{
+    flex: 1;
+}
+
+.payment_order_payment_surrender{
+    grid-area: payment_order_payment_surrender;
+    display: flex;
+}
+
+
+/* !order-form-group-end */
