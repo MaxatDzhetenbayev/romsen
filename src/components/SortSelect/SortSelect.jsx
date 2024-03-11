@@ -45,6 +45,7 @@ export const SortSelect = ({ sortProduct }) => {
           <hr className={styles.divider} />
           {sortOptions.map((sort) => (
             <li
+              key={sort.label}
               className={styles.option}
               onClick={() => {
                 changeSort(sort);

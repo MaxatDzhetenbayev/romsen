@@ -18,3 +18,10 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 40px;
 }
+
+@media (max-width: 400px) {
+  .list {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}

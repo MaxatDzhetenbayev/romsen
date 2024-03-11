@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useMemo, useState } from "react";
 
 export const CartContext = createContext();
 
@@ -10,29 +10,71 @@ export const CartProvider = ({ children }) => {
   const closeCart = () => {
     setOpen(false);
   };
-  
-  const [products, setProducts] = useState([
-    {
-      img: "/sets/philalove.png",
-      name: "Филадельфия LOVE сет",
-      grams: "1000",
-      pieces: "40",
-      price: "1479",
-      quantity: 1,
-    },
-  ]);
-  const addToCart = () => {};
-  const removeFromCart = () => {};
+
+  const [products, setProducts] = useState([]);
+  const addToCart = (product) => {
+    if (!isProductAdded(product.id)) {
+      setProducts([...products, { ...product, quantity: 1 }]);
+      return;
+    }
+    increaseQuantity(product.id);
+  };
+  const removeFromCart = (productId) => {
+    if (!isProductAdded(productId)) {
+      return;
+    }
+    decreaseQuantity(productId);
+  };
+  const totalPrice = useMemo(() => {
+    let res = 0;
+    products.forEach((p) => {
+      res += p.price;
+    });
+    return res;
+  }, [products]);
+  const isProductAdded = (productId) => {
+    return products.findIndex(({ id }) => id === productId) !== -1;
+  };
+  const increaseQuantity = (productId) => {
+    setProducts((prev) =>
+      prev.map((p) => {
+        if (p.id === productId) {
+          return {
+            ...p,
+            quantity: p.quantity + 1,
+            price: p.price * (p.quantity + 1),
+          };
+        } else {
+          return p;
+        }
+      })
+    );
+  };
+  const decreaseQuantity = (productId) => {
+    setProducts((prev) =>
+      prev
+        .map((p) => {
+          if (p.id === productId) {
+            return { ...p, quantity: p.quantity - 1 };
+          } else {
+            return p;
+          }
+        })
+        .filter((p) => p.quantity !== 0)
+    );
+  };
   return (
     <CartContext.Provider
       value={{
         open,
-        totalPrice: 100,
+        totalPrice,
         openCart,
         closeCart,
         products,
         addToCart,
         removeFromCart,
+        increaseQuantity,
+        decreaseQuantity,
       }}
     >
       {children}
