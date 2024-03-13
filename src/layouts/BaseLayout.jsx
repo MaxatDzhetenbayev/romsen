@@ -19,7 +19,7 @@ export const BaseLayout = () => {
         <Outlet />
         <Footer />
       </div>
-      <Cart />
+      {open && <Cart />}
       <MobileMenu />
     </div>
   );
