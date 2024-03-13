@@ -8,6 +8,7 @@ export const Button = ({
   size = "base",
   className,
   color,
+  onClick,
   ...props
 }) => {
   if (isLink)
@@ -32,6 +33,7 @@ export const Button = ({
         { base: styles.baseSize, small: styles.smallSize }[size],
         className
       )}
+      onClick={onClick}
       {...props}
     >
       {children}

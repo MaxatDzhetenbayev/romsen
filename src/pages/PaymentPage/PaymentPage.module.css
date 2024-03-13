@@ -1,0 +1,138 @@
+.payment {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    min-height: 100vh;
+}
+
+.payment_content {
+    background-color: #F2F2F2;
+}
+
+.payment_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 7px 16px;
+    border-bottom: 1px solid var(--color-gray);
+}
+
+
+.payment_header>a {
+    color: #FF9846;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.payment_header>h3 {
+    font-size: 16px;
+}
+
+.header__working_hous {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.header__working_hous>p {
+    color: #A4ACAD;
+    font-size: 14px;
+    padding-bottom: 3px;
+}
+
+
+/* !order-form-group-start */
+
+
+.payment_wrapper{
+    max-width: 780px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.payment_wrapper h1{
+    text-align: center;
+}
+
+.payment_userInfo{
+    padding-top: 40px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.payment_order {
+    flex: 1;
+    display: grid;
+    grid-template-areas:
+        'payment_order_phone payment_order_name'
+        'payment_order_payment_methods payment_order_payment_methods'
+        'payment_order_payment_surrender payment_order_payment_surrender_button'
+        'payment_order_payment_comments payment_order_payment_comments'
+        'payment_order_payment_items_list payment_order_payment_items_list'
+        'payment_order_payment_promo payment_order_payment_promo';
+        gap: 20px;
+}
+
+.payment_order_phone {
+    grid-area: payment_order_phone;
+}
+
+.payment_order_name {
+    grid-area: payment_order_name;
+}
+
+.payment_order_payment_methods {
+    grid-area: payment_order_payment_methods;
+    display: flex;
+}
+
+.payment_order_payment_methods button{
+    flex: 1;
+    padding: 20px;
+
+}
+
+.payment_order_payment_method_choice{
+    background-color: #FF9846;
+}
+
+.payment_order_payment_surrender{
+    grid-area: payment_order_payment_surrender;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0px 20px;
+}
+
+.payment_order_payment_surrender_button{
+    grid-area: payment_order_payment_surrender_button;
+
+}
+
+.payment_order_payment_comments{
+    grid-area: payment_order_payment_comments;
+}
+
+.payment_order_payment_items_list{
+    grid-area: payment_order_payment_items_list;
+}
+
+.payment_order_payment_promo{
+    grid-area: payment_order_payment_promo;
+}
+
+.payment_order_payment_items_item{
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment_order_payment_items_item > div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* !order-form-group-end */
