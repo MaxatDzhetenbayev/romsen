@@ -18,10 +18,15 @@ export const ProductInfoPage = () => {
   
   return (
     <div>
+      <div className={styles.navigButton}>
+      <Link to = "#" onClick={() => history.back()}  style={{display: "flex", alignItems: "center", gap: 10}}> 
+      <img src="/Arrow.png" alt="" width={20} height={20} />
+      Назад</Link>
+      </div>
+
     {product ? (
       
       <div className={styles.prodInfo}>
-      {/* <Link to = "#" onClick={history.back()}>Назад</Link> */}
       <img src={product.imagePath} alt="" />
     
       <div className={styles.prodDiv}>
@@ -35,7 +40,7 @@ export const ProductInfoPage = () => {
       </div>
       </div>
     ) : (
-      <div class={styles.loader}></div>
+      <div className={styles.loader}></div>
     )}
   </div>
 );

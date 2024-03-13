@@ -63,7 +63,19 @@
     cursor: pointer;
 }
 
+.navigButton{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 35px;
+    
+}
 
+.navigButton :hover{
+    transition: 0.2s;
+    transform: scale(1.1);
+    cursor: pointer;
+}
 .loader {
     margin: 200px;
     border: 12px solid #f3f3f3; 
