@@ -1,5 +1,5 @@
 import { useContext, useEffect, useReducer, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Card } from "../../components/ui/Card/Card";
 import {
   CornIcon,
@@ -238,22 +238,25 @@ export const ProductsPage = () => {
           <h1>{productsTypes[type].name}</h1>
         </div>
         <div className={styles.sortWrapper}>
-        <SortSelect sortProduct={sortProduct} />
+          <SortSelect sortProduct={sortProduct} />
         </div>
       </section>
       <section className={styles.list}>
-        {sortedProducts.map((p) => (
-          <Card
-            key={p.id}
-            add={() => {
-              addToCart(p);
-            }}
-            img={p.imagePath}
-            name={p.name}
-            desc={`${p.grams} грамм и  ${p.pieces} кусочков`}
-            price={p.price + " TEНГЕ"}
-          />
-        ))}
+        {
+          sortedProducts.map((p) => (
+            <Link to={`/products/${p.id}`}>
+              <Card
+                key={p.id}
+                add={() => {
+                  addToCart(p);
+                }}
+                img={p.imagePath}
+                name={p.name}
+                desc={`${p.grams} грамм и  ${p.pieces} кусочков`}
+                price={p.price + " TEНГЕ"}
+              />
+            </Link>
+          ))}
       </section>
     </section>
   );
