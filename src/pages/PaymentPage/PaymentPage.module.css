@@ -1,11 +1,23 @@
 .payment {
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 3fr 1fr;
     min-height: 100vh;
+}
+
+@media (max-width: 765px) {
+    .payment {
+        display: block;
+        min-height: 100vh;
+    }
+
+    .payment_cart{
+        display: none;
+    }
 }
 
 .payment_content {
     background-color: #F2F2F2;
+    padding: 10px;
 }
 
 .payment_header {
@@ -42,10 +54,7 @@
 
 
 /* !order-form-group-start */
-
-
 .payment_wrapper{
-    max-width: 780px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -59,12 +68,11 @@
 .payment_userInfo{
     padding-top: 40px;
     display: flex;
-    gap: 20px;
+    flex-direction: column;
     align-items: center;
 }
 
 .payment_order {
-    flex: 1;
     display: grid;
     grid-template-areas:
         'payment_order_phone payment_order_name'
@@ -73,7 +81,7 @@
         'payment_order_payment_comments payment_order_payment_comments'
         'payment_order_payment_items_list payment_order_payment_items_list'
         'payment_order_payment_promo payment_order_payment_promo';
-        gap: 20px;
+    gap: 20px;
 }
 
 .payment_order_phone {
@@ -103,8 +111,6 @@
     grid-area: payment_order_payment_surrender;
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 0px 20px;
 }
 
 .payment_order_payment_surrender_button{

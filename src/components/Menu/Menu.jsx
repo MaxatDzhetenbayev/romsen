@@ -30,15 +30,6 @@ export const Menu = () => {
           <img src="menu/drinks.png" alt="" />
         </Link>
       </div>
-
-
-
-
-
-
-
-
-
     </>
   )
 }
