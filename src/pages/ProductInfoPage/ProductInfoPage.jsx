@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import styles from "./ProductInfoPage.module.css";
 import { NewProducts } from '../../components/NewProducts/NewProducts';
-
-
-
+import { CartContext } from '../../context/cart.context';
 
 export const ProductInfoPage = () => {
   
   const {id} = useParams()
-  const [loading, setLoading] = useState(true)
+  const {addToCart} = useContext(CartContext)
   const [product, setProduct] = useState(null)
   useEffect(() => {
   fetch(`https://65e830004bb72f0a9c4e817e.mockapi.io/api/v1/products/${id}`)
@@ -17,6 +15,8 @@ export const ProductInfoPage = () => {
   .then((data) => {setProduct(data); setLoading(false)})  
   }, [])
   
+  
+
   return (
     <div>
       <div className={styles.navigButton}>
@@ -37,7 +37,7 @@ export const ProductInfoPage = () => {
         
         <p className={styles.prodСompos}>Состав</p>
         <p className={styles.prodСomposition}>Лосось, сыр, огурец, авокадо</p>
-        <button className={styles.wantBtn} >Хочу!</button>
+        <button className={styles.wantBtn} onClick={() => addToCart(product)}>Хочу!</button>
       </div>
       </div>
       <div className={styles.prodSlider}>
