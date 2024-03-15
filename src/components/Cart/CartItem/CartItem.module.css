@@ -1,5 +1,6 @@
 .wrapper {
   display: flex;
+  width: 360px;
   gap: 5px;
 }
 .imgWrapper {
@@ -19,9 +20,6 @@
   font-size: 18px;
 }
 .bottom {
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
   font-weight: 700;
 }
 

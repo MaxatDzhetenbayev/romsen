@@ -1,6 +1,6 @@
 .wrapper {
-  width: 360px;
   padding: 55px 10px 10px 40px;
+  width: 100%;
   display: flex;
   gap: 10px;
   flex-direction: column;
@@ -35,18 +35,46 @@
 .buyButton {
   font-size: 18px;
 }
-/* .wrap{
-   display: none;
-} */
+.wrap {
+  transition: max-width 1s;
+}
 
+.closeBtn {
+  position: absolute;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  top: 20px;
+  right: 20px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+.closeBtn:hover {
+  color: var(--primary-color);
+}
+.opened {
+  max-width: 360px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  height: 100%;
+  background-color: white;
+}
+.closed {
+  max-width: 0;
+  height: 0;
+}
+.content {
+  transition: opacity 0.5s;
+  animation: fadein 1s ease-in-out;
+}
 
-
-  .opened{
-    display: block;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 1000;
-    height: 100%;
-    background-color: white;
+@keyframes fadein {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
