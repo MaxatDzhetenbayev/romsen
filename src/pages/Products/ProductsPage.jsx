@@ -207,7 +207,9 @@ const sortReducer = (state, action) => {
 };
 export const ProductsPage = () => {
   const { type } = useParams();
-
+  function stopEvent(e) {
+    e.stopPropagation();
+  }
   const [sortedProducts, dispatch] = useReducer(sortReducer, []);
   const { addToCart } = useContext(CartContext);
   const sortProduct = (type) => {
@@ -247,8 +249,8 @@ export const ProductsPage = () => {
             <Link to={`/products/${p.id}`}>
               <Card
                 key={p.id}
-                add={() => {
-                  addToCart(p);
+                add={(event) => {
+                  addToCart(p, event);
                 }}
                 img={p.imagePath}
                 name={p.name}

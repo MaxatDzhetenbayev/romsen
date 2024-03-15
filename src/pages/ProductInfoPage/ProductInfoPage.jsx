@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import styles from "./ProductInfoPage.module.css";
+import { NewProducts } from '../../components/NewProducts/NewProducts';
 
 
 
@@ -25,7 +26,7 @@ export const ProductInfoPage = () => {
       </div>
 
     {product ? (
-      
+      <div>
       <div className={styles.prodInfo}>
       <img src={product.imagePath} alt="" />
     
@@ -37,6 +38,10 @@ export const ProductInfoPage = () => {
         <p className={styles.prodСompos}>Состав</p>
         <p className={styles.prodСomposition}>Лосось, сыр, огурец, авокадо</p>
         <button className={styles.wantBtn} >Хочу!</button>
+      </div>
+      </div>
+      <div className={styles.prodSlider}>
+      <NewProducts />
       </div>
       </div>
     ) : (
