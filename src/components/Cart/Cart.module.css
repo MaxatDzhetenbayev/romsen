@@ -36,7 +36,12 @@
   font-size: 18px;
 }
 .wrap {
-  transition: max-width 1s;
+  animation: fadein 0.7s ease-in-out;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: white;
+  height: 100%;
 }
 
 .closeBtn {
@@ -52,29 +57,16 @@
 .closeBtn:hover {
   color: var(--primary-color);
 }
-.opened {
-  max-width: 360px;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 1000;
-  height: 100%;
-  background-color: white;
-}
-.closed {
-  max-width: 0;
-  height: 0;
-}
-.content {
-  transition: opacity 0.5s;
-  animation: fadein 1s ease-in-out;
-}
+
+
 
 @keyframes fadein {
   from {
-    opacity: 0;
+    transform: translateX(360px);
+    opacity: 0.9;
   }
   to {
+    transform: translateX(0);
     opacity: 1;
   }
 }
