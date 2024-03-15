@@ -251,7 +251,8 @@ export const ProductsPage = () => {
               <Card
                 key={p.id}
                 add={(event) => {
-                  addToCart(p, event);
+                  event.stopPropagation()
+                  addToCart(p);
                 }}
                 img={p.imagePath}
                 name={p.name}

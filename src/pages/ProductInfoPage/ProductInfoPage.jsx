@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import styles from "./ProductInfoPage.module.css";
 import { NewProducts } from '../../components/NewProducts/NewProducts';
@@ -9,7 +9,7 @@ import { NewProducts } from '../../components/NewProducts/NewProducts';
 export const ProductInfoPage = () => {
   
   const {id} = useParams()
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true)  
   const [product, setProduct] = useState(null)
   useEffect(() => {
   fetch(`https://65e830004bb72f0a9c4e817e.mockapi.io/api/v1/products/${id}`)
