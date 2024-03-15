@@ -12,7 +12,8 @@ export const CartProvider = ({ children }) => {
   };
 
   const [products, setProducts] = useState([]);
-  const addToCart = (product) => {
+  const addToCart = (product, event) => {
+    event.stopPropagation() 
     if (!isProductAdded(product.id)) {
       setProducts([...products, { ...product, quantity: 1, defaultPrice : product.price }]);
       return;
