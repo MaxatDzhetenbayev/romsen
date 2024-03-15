@@ -8,7 +8,7 @@ import { Aside } from "../Aside/Aside";
 export const Cart = ({ className }) => {
   const { products, totalPrice, open, closeCart } = useContext(CartContext);
   return (
-    <div className={clsx(styles.wrap, open ? styles.opened : styles.closed)}>
+    <div className={clsx(styles.wrap)}>
       <button
         onClick={closeCart}
         className={styles.closeBtn}
@@ -18,29 +18,21 @@ export const Cart = ({ className }) => {
       >
         <span>X</span>
       </button>
-      {open && (
-        <section className={clsx(styles.content)}>
-          {products.length === 0 ? (
-            <Aside />
-          ) : (
-            <aside className={clsx(styles.wrapper)}>
-              {products.map((product, idx) => (
-                <CartItem key={idx} product={product} />
-              ))}
-              <div className={styles.bottom}>
-                <span className={styles.totalPrice}>{totalPrice} TEНГЕ</span>
-                <Button
-                  size="small"
-                  color="orange"
-                  isLink={true}
-                  to={"/payment"}
-                >
-                  Оформить заказ
-                </Button>
-              </div>
-            </aside>
-          )}
-        </section>
+
+      {products.length === 0 ? (
+        <Aside />
+      ) : (
+        <aside className={clsx(styles.wrapper)}>
+          {products.map((product, idx) => (
+            <CartItem key={idx} product={product} />
+          ))}
+          <div className={styles.bottom}>
+            <span className={styles.totalPrice}>{totalPrice} TEНГЕ</span>
+            <Button size="small" color="orange" isLink={true} to={"/payment"}>
+              Оформить заказ
+            </Button>
+          </div>
+        </aside>
       )}
     </div>
   );
