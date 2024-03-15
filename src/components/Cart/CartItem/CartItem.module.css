@@ -13,6 +13,8 @@
   object-fit: contain;
 }
 .right {
+  display: flex;
+  flex-direction: column;
 }
 .name {
   font-weight: 400;
@@ -21,6 +23,8 @@
 }
 .bottom {
   font-weight: 700;
+  display: flex;
+  gap: 10px;
 }
 
 .counter {
