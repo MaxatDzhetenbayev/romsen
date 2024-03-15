@@ -1,51 +1,51 @@
-.prodInfo{
+.prodInfo {
     background-color: white;
     display: flex;
+    gap: 40px;
     padding: 20px;
 }
 
-.prodInfo img{
+.prodInfo img {
     flex: 1;
 }
 
-.prodDiv{
+.prodDiv {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: start;
-    margin-left: 40px;
 }
 
 
 .prodName {
     font-size: 30px;
     font-weight: 600;
-    
+
 }
 
-.prodGrams{
+.prodGrams {
     margin-top: 10px;
     color: #F46D40;
     font-weight: lighter;
 }
 
-.prodPrice{
+.prodPrice {
     margin-top: 30px;
     font-size: 20px;
     font-weight: bold;
 }
 
-.prodСompos{
+.prodСompos {
     margin-top: 15px;
     font-weight: bold;
 }
 
-.counter{
+.counter {
     display: flex;
     justify-content: center;
 }
 
-.wantBtn{
+.wantBtn {
     margin-top: 20px;
     background-color: #F46D40;
     border-radius: 5px;
@@ -56,35 +56,35 @@
     font-size: 17px;
     color: white;
     transition: 0.2s;
+
 }
 
-.wantBtn:hover{
+.wantBtn:hover {
     opacity: 0.8;
     cursor: pointer;
 }
 
-.navigButton{
+.navigButton {
     display: flex;
     align-items: center;
     gap: 5px;
     margin: 35px;
-    
 }
 
 
-.prodSlider{
+.prodSlider {
     padding-top: 30px;
 }
 
 
-.navigButton :hover{
+.navigButton :hover {
     transition: 0.2s;
     opacity: 0.5;
     cursor: pointer;
 }
+
 .loader {
-    margin: 200px;
-    border: 12px solid #f3f3f3; 
+    border: 12px solid #f3f3f3;
     border-top: 12px solid #F46D40;
     border-radius: 50%;
     width: 140px;
@@ -93,18 +93,33 @@
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 
 @media screen and (max-width: 460px) {
-    .prodInfo{
+    .prodInfo {
         display: flex;
         flex-direction: column;
-        align-items: center;
     }
-    .prodInfo img{
-        max-width: 200px;
+
+    .prodDiv {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .wantBtn {
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .navigButton{
+        margin: 20px 0px;
     }
 }
