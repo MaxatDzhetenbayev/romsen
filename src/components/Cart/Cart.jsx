@@ -29,7 +29,12 @@ export const Cart = ({ className }) => {
               ))}
               <div className={styles.bottom}>
                 <span className={styles.totalPrice}>{totalPrice} TEНГЕ</span>
-                <Button size="small" color="orange">
+                <Button
+                  size="small"
+                  color="orange"
+                  isLink={true}
+                  to={"/payment"}
+                >
                   Оформить заказ
                 </Button>
               </div>
