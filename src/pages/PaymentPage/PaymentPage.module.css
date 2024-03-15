@@ -1,144 +1,86 @@
-.payment {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    min-height: 100vh;
+.container {
+  display: flex;
+  width: 100%;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  gap: 10px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  margin: 0px 10px 10px 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-gray);
+}
+.header > a {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+.workingHours {
+  display: flex;
+  gap: 5px;
+  color: var(--color-gray);
+  justify-content: center;
+}
+.paymentWrapper {
+  padding: 0 20px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(7, 1fr);
+  gap: 20px;
+}
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  justify-self: start;
+}
+.userContact {
+  grid-column: 1/2;
+  display: flex;
+  gap: 20px;
+}
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+.split button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9px 53px;
+  height: 40px;
+  font-size: 18px;
 }
 
-@media (max-width: 765px) {
-    .payment {
-        display: block;
-        min-height: 100vh;
-    }
-
-    .payment_cart{
-        display: none;
-    }
+.split :nth-child(1) {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
-
-.payment_content {
-    background-color: #F2F2F2;
-    padding: 10px;
+.split :nth-child(2) {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
-
-.payment_header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 7px 16px;
-    border-bottom: 1px solid var(--color-gray);
+.splitSelected {
+  color: white;
+  background-color: var(--primary-color);
 }
-
-
-.payment_header>a {
-    color: #FF9846;
-    font-weight: 500;
-    font-size: 16px;
-    text-decoration: none;
+.userLocation {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(5, 1fr);
 }
-
-.payment_header>h3 {
-    font-size: 16px;
+.userLocation :nth-child(1) {
+  grid-column: 1/5;
 }
-
-.header__working_hous {
-    display: flex;
-    align-items: center;
-    gap: 3px;
+.cart {
+  width: 400px;
 }
-
-.header__working_hous>p {
-    color: #A4ACAD;
-    font-size: 14px;
-    padding-bottom: 3px;
-}
-
-
-/* !order-form-group-start */
-.payment_wrapper{
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.payment_wrapper h1{
-    text-align: center;
-}
-
-.payment_userInfo{
-    padding-top: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.payment_order {
-    display: grid;
-    grid-template-areas:
-        'payment_order_phone payment_order_name'
-        'payment_order_payment_methods payment_order_payment_methods'
-        'payment_order_payment_surrender payment_order_payment_surrender_button'
-        'payment_order_payment_comments payment_order_payment_comments'
-        'payment_order_payment_items_list payment_order_payment_items_list'
-        'payment_order_payment_promo payment_order_payment_promo';
-    gap: 20px;
-}
-
-.payment_order_phone {
-    grid-area: payment_order_phone;
-}
-
-.payment_order_name {
-    grid-area: payment_order_name;
-}
-
-.payment_order_payment_methods {
-    grid-area: payment_order_payment_methods;
-    display: flex;
-}
-
-.payment_order_payment_methods button{
-    flex: 1;
-    padding: 20px;
-
-}
-
-.payment_order_payment_method_choice{
-    background-color: #FF9846;
-}
-
-.payment_order_payment_surrender{
-    grid-area: payment_order_payment_surrender;
-    display: flex;
-    align-items: center;
-}
-
-.payment_order_payment_surrender_button{
-    grid-area: payment_order_payment_surrender_button;
-
-}
-
-.payment_order_payment_comments{
-    grid-area: payment_order_payment_comments;
-}
-
-.payment_order_payment_items_list{
-    grid-area: payment_order_payment_items_list;
-}
-
-.payment_order_payment_promo{
-    grid-area: payment_order_payment_promo;
-}
-
-.payment_order_payment_items_item{
-    display: flex;
-    justify-content: space-between;
-}
-
-.payment_order_payment_items_item > div{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-/* !order-form-group-end */
