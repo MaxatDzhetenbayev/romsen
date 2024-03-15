@@ -9,6 +9,7 @@ import { ProductsPage } from "./pages/Products/ProductsPage.jsx";
 import { CartProvider } from "./context/cart.context.jsx";
 import {PaymentPage} from './pages/PaymentPage/PaymentPage.jsx'
 import { ProductInfoPage } from "./pages/ProductInfoPage/ProductInfoPage.jsx";
+import { ReviewsPage } from "./pages/Reviews/ReviewsPage.jsx";
 const router = createBrowserRouter([
   {
     element: (
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
         element: <MainPage />,
       },
       { path: "/categories/:type", element: <ProductsPage /> },
+      { path: "/reviews", element: <ReviewsPage/> },
       { path: "/products/:id", element: <ProductInfoPage /> },
     ],
   },

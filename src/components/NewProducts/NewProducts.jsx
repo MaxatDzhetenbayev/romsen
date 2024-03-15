@@ -48,7 +48,6 @@ const newProductList = [
 ]
 
 
-
 export const NewProducts = () => {
     return (
         <section className='container__small'>
@@ -56,10 +55,12 @@ export const NewProducts = () => {
                 navigation={true}
                 modules={[Navigation, FreeMode]}
                 className={style.new_products}
-                slidesPerView={3}
                 autoHeight={true}
                 style={{ height: 350 }}
                 breakpoints={{
+                    0: {
+                        slidesPerView: 1,
+                    },
                     340: {
                         slidesPerView: 2,
                         spaceBetween: 10,
