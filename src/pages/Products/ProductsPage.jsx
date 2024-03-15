@@ -1,5 +1,5 @@
-import { useContext, useEffect, useReducer, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useContext, useEffect, useReducer } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { Card } from "../../components/ui/Card/Card";
 import {
   CornIcon,
@@ -18,136 +18,136 @@ import clsx from "clsx";
 import { SortSelect } from "../../components/SortSelect/SortSelect";
 import { CartContext } from "../../context/cart.context";
 
-const productsList = {
-  pizza: new Array(9).fill({
-    img: "/sets/salomon.jpg",
-    name: "Саломон сет",
-    grams: "1050",
-    pieces: "30",
-    price: "1500",
-  }),
-  wok: new Array(9).fill({
-    img: "/sets/salomon.jpg",
-    name: "Саломон сет",
-    grams: "1050",
-    pieces: "30",
-    price: "1500",
-  }),
-  rolls: new Array(9).fill({
-    img: "/sets/salomon.jpg",
-    name: "Саломон сет",
-    grams: "1050",
-    pieces: "30",
-    price: "1500",
-  }),
-  sushi: new Array(9).fill({
-    img: "/sets/salomon.jpg",
-    name: "Саломон сет",
-    grams: "1050",
-    pieces: "30",
-    price: "1500",
-  }),
-  salats: new Array(9).fill({
-    img: "/sets/salomon.jpg",
-    name: "Саломон сет",
-    grams: "1050",
-    pieces: "30",
-    price: "1500",
-  }),
-  soups: new Array(9).fill({
-    img: "/sets/salomon.jpg",
-    name: "Саломон сет",
-    grams: "1050",
-    pieces: "30",
-    price: "1500",
-  }),
-  corndogs: new Array(9).fill({
-    img: "/sets/salomon.jpg",
-    name: "Саломон сет",
-    grams: "1050",
-    pieces: "30",
-    price: "1500",
-  }),
-  drinks: new Array(9).fill({
-    img: "/sets/salomon.jpg",
-    name: "Саломон сет",
-    grams: "1050",
-    pieces: "30",
-    price: "1500",
-  }),
-  stock: new Array(9).fill({
-    img: "/sets/salomon.jpg",
-    name: "Саломон сет",
-    grams: "1050",
-    pieces: "30",
-    price: "1500",
-  }),
-  sets: [
-    {
-      img: "/sets/salomon.jpg",
-      name: "Саломон сет",
-      grams: "1050",
-      pieces: "30",
-      price: "1500",
-    },
-    {
-      img: "/sets/phila.png",
-      name: "Сет '5 Филадельфий'",
-      grams: "1120",
-      pieces: "40",
-      price: "1499",
-    },
-    {
-      img: "/sets/phila2.png",
-      name: "Филадельфия и лосось сет",
-      grams: "1260",
-      pieces: "36",
-      price: "1499",
-    },
-    {
-      img: "/sets/phila3.png",
-      name: "Сет '6 Филадельфий'",
-      grams: "1320",
-      pieces: "46",
-      price: "1559",
-    },
-    {
-      img: "/sets/top.png",
-      name: "Топовый сет",
-      grams: "1020",
-      pieces: "40",
-      price: "1519",
-    },
-    {
-      img: "/sets/kamikadze.png",
-      name: "Камикадзе сет",
-      grams: "1200",
-      pieces: "52",
-      price: "1469",
-    },
-    {
-      img: "/sets/phila4.png",
-      name: "Сет '4 Филадельфии'",
-      grams: "1100",
-      pieces: "32",
-      price: "1559",
-    },
-    {
-      img: "/sets/philalove.png",
-      name: "Филадельфия LOVE сет",
-      grams: "1000",
-      pieces: "40",
-      price: "1479",
-    },
-    {
-      img: "/sets/yakudza.png",
-      name: "Якудза сет",
-      grams: "1270",
-      pieces: "50",
-      price: "1499",
-    },
-  ],
-};
+// const productsList = {
+// pizza: new Array(9).fill({
+//   img: "/sets/salomon.jpg",
+//   name: "Саломон сет",
+//   grams: "1050",
+//   pieces: "30",
+//   price: "1500",
+// }),
+// wok: new Array(9).fill({
+//   img: "/sets/salomon.jpg",
+//   name: "Саломон сет",
+//   grams: "1050",
+//   pieces: "30",
+//   price: "1500",
+// }),
+// rolls: new Array(9).fill({
+//   img: "/sets/salomon.jpg",
+//   name: "Саломон сет",
+//   grams: "1050",
+//   pieces: "30",
+//   price: "1500",
+// }),
+// sushi: new Array(9).fill({
+//   img: "/sets/salomon.jpg",
+//   name: "Саломон сет",
+//   grams: "1050",
+//   pieces: "30",
+//   price: "1500",
+// }),
+// salats: new Array(9).fill({
+//   img: "/sets/salomon.jpg",
+//   name: "Саломон сет",
+//   grams: "1050",
+//   pieces: "30",
+//   price: "1500",
+// }),
+// soups: new Array(9).fill({
+//   img: "/sets/salomon.jpg",
+//   name: "Саломон сет",
+//   grams: "1050",
+//   pieces: "30",
+//   price: "1500",
+// }),
+// corndogs: new Array(9).fill({
+//   img: "/sets/salomon.jpg",
+//   name: "Саломон сет",
+//   grams: "1050",
+//   pieces: "30",
+//   price: "1500",
+// }),
+// drinks: new Array(9).fill({
+//   img: "/sets/salomon.jpg",
+//   name: "Саломон сет",
+//   grams: "1050",
+//   pieces: "30",
+//   price: "1500",
+// }),
+// stock: new Array(9).fill({
+//   img: "/sets/salomon.jpg",
+//   name: "Саломон сет",
+//   grams: "1050",
+//   pieces: "30",
+//   price: "1500",
+// }),
+// sets: [
+//   {
+//     img: "/sets/salomon.jpg",
+//     name: "Саломон сет",
+//     grams: "1050",
+//     pieces: "30",
+//     price: "1500",
+//   },
+//   {
+//     img: "/sets/phila.png",
+//     name: "Сет '5 Филадельфий'",
+//     grams: "1120",
+//     pieces: "40",
+//     price: "1499",
+//   },
+//   {
+//     img: "/sets/phila2.png",
+//     name: "Филадельфия и лосось сет",
+//     grams: "1260",
+//     pieces: "36",
+//     price: "1499",
+//   },
+//   {
+//     img: "/sets/phila3.png",
+//     name: "Сет '6 Филадельфий'",
+//     grams: "1320",
+//     pieces: "46",
+//     price: "1559",
+//   },
+//   {
+//     img: "/sets/top.png",
+//     name: "Топовый сет",
+//     grams: "1020",
+//     pieces: "40",
+//     price: "1519",
+//   },
+//   {
+//     img: "/sets/kamikadze.png",
+//     name: "Камикадзе сет",
+//     grams: "1200",
+//     pieces: "52",
+//     price: "1469",
+//   },
+//   {
+//     img: "/sets/phila4.png",
+//     name: "Сет '4 Филадельфии'",
+//     grams: "1100",
+//     pieces: "32",
+//     price: "1559",
+//   },
+//   {
+//     img: "/sets/philalove.png",
+//     name: "Филадельфия LOVE сет",
+//     grams: "1000",
+//     pieces: "40",
+//     price: "1479",
+//   },
+//   {
+//     img: "/sets/yakudza.png",
+//     name: "Якудза сет",
+//     grams: "1270",
+//     pieces: "50",
+//     price: "1499",
+//   },
+// ],
+// };
 const productsTypes = {
   sets: {
     name: "Сеты",
@@ -207,9 +207,7 @@ const sortReducer = (state, action) => {
 };
 export const ProductsPage = () => {
   const { type } = useParams();
-  function stopEvent(e) {
-    e.stopPropagation();
-  }
+  const navigate = useNavigate()
   const [sortedProducts, dispatch] = useReducer(sortReducer, []);
   const { addToCart } = useContext(CartContext);
   const sortProduct = (type) => {
@@ -246,7 +244,10 @@ export const ProductsPage = () => {
       <section className={styles.list}>
         {
           sortedProducts.map((p) => (
-            <Link to={`/products/${p.id}`}>
+            <button onClick={() => {
+              navigate(`/products/${p.id}`)}
+              } 
+              key={p.id}>
               <Card
                 key={p.id}
                 add={(event) => {
@@ -257,7 +258,7 @@ export const ProductsPage = () => {
                 desc={`${p.grams} грамм и  ${p.pieces} кусочков`}
                 price={p.price + " TEНГЕ"}
               />
-            </Link>
+            </button>
           ))}
       </section>
     </section>
