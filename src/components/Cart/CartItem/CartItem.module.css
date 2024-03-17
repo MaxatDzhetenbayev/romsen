@@ -26,38 +26,3 @@
   display: flex;
   gap: 10px;
 }
-
-.counter {
-  width: 67px;
-  height: 21px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 9px;
-}
-.counter > button {
-  cursor: pointer;
-}
-.counter > span {
-  font-size: 18px;
-  font-weight: 700;
-}
-.minus {
-  background: inherit;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 19px;
-  height: 19px;
-}
-.plus {
-  width: 19px;
-  height: 19px;
-  color: white;
-  background: var(--primary-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 100%;
-}

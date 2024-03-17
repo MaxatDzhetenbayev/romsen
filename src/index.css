@@ -6,10 +6,6 @@
   --color-black: #111111;
 
   --main-width: 950px;
-  input,
-  textarea {
-    margin-bottom: 0;
-  }
 }
 
 * {
