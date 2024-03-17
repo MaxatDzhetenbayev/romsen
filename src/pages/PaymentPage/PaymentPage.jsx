@@ -13,7 +13,7 @@ export const PaymentPage = () => {
   const { totalPrice } = useContext(CartContext);
   const [isCardMethod, setIsCardMethod] = useState(false);
   const [delivery, setDelivery] = useState("courier");
-  const [now, setNow] = useState("now");
+  const [deliveryTime, setDeliveryTime] = useState("now");
   const [count, setCount] = useState(0);
   const increase = () => setCount(count + 1);
   const decrease = () =>
@@ -104,19 +104,19 @@ export const PaymentPage = () => {
           </section>
           <section className={clsx(styles.split, styles.time)}>
             <button
-              onClick={() => setNow("now")}
+              onClick={() => setDeliveryTime("now")}
               className={clsx(
                 styles.splitButton,
-                now == "now" && styles.splitSelected,
+                deliveryTime == "now" && styles.splitSelected,
               )}
             >
               На сейчас
             </button>
             <button
-              onClick={() => setNow("soon")}
+              onClick={() => setDeliveryTime("soon")}
               className={clsx(
                 styles.splitButton,
-                now == "soon" && styles.splitSelected,
+                deliveryTime == "soon" && styles.splitSelected,
               )}
             >
               На время
