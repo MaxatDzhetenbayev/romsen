@@ -79,6 +79,16 @@
   display: block;
   cursor: pointer;
 }
+.cartBtn::after {
+  content: attr(data-count);
+  width: 10px;
+  height: 10px;
+  background-color: var(--primary-color);
+  padding: 2px 5px;
+  border-radius: 100%;
+  color: white;
+  font-weight: bold;
+}
 
 @media (max-width: 1090px) {
   .navigation__links {

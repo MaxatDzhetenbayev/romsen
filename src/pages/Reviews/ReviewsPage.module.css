@@ -1,63 +1,59 @@
-.reviews{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 10px;
-    
+.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
 }
-.user{
-    font-size: 30px;
-    gap: 20px;
-    padding: 10px;
-    
+.user {
+  font-size: 30px;
+  gap: 20px;
+  padding: 10px;
 }
-.date{
-    display: flex;  
-    flex-direction: column;
-    color: #A4ACAD;
-    font-size: 22px;
-    padding: 17px;
+.date {
+  display: flex;
+  flex-direction: column;
+  color: #a4acad;
+  font-size: 22px;
+  padding: 17px;
 }
-.container{
-    background: #fff;
-    border-radius: 5px;
+.container {
+  background: #fff;
+  border-radius: 5px;
 }
 
-.head{
-    display: flex;
-    gap: 10px;
+.head {
+  display: flex;
+  gap: 10px;
 }
-.text{
-    gap: 20px;
-    padding: 10px;
-    font-size: 22px;
+.text {
+  gap: 20px;
+  padding: 10px;
+  font-size: 22px;
 }
-.wrapper{
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
 }
 
 .form {
-    margin-top: 20px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  textarea,
-  input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size:18px ;
-    resize:none;
-  }
-.button_form{
+  margin-top: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 18px;
+  resize: none;
+}
+.button_form {
   width: 200px;
   height: 40px;
   background-color: black;
@@ -67,7 +63,7 @@
   padding: 5px;
   cursor: pointer;
 }
-.button{
+.button {
   background-color: black;
   border-radius: 5px;
   color: #fff;
@@ -77,30 +73,27 @@
   cursor: pointer;
 }
 .reviews_container {
-    height: 500px; 
-    overflow-y: scroll; 
-    
-
-  }
+  height: 500px;
+  overflow-y: scroll;
+}
 @media screen and (max-width: 480px) {
-    .wrapper{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-       
-        
-    }
-    .button{
-        width: 85vw;
-    }
-    .text, .date{
-        font-size: 20px;
-    }
-    .user{
-        font-size: 22px;
-    }
-    .reviews{
-        margin: 1px;
-    }
-    }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .button {
+    width: 85vw;
+  }
+  .text,
+  .date {
+    font-size: 20px;
+  }
+  .user {
+    font-size: 22px;
+  }
+  .reviews {
+    margin: 1px;
+  }
+}

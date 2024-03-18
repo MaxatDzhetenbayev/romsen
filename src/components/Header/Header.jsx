@@ -4,7 +4,7 @@ import styles from "./Hedaer.module.css";
 import { useContext } from "react";
 import { CartContext } from "../../context/cart.context";
 export const Header = () => {
-  const { open, openCart, closeCart } = useContext(CartContext);
+  const { open, openCart, closeCart, products } = useContext(CartContext);
   return (
     <header className={styles.header}>
       <section className={styles.header__contact}>
@@ -35,7 +35,11 @@ export const Header = () => {
           <button>
             <img src="/svgs/find.svg" alt="" />
           </button>
-          <button className={styles.cartBtn} onClick={open ? closeCart : openCart}>
+          <button
+            data-count={products.length}
+            className={styles.cartBtn}
+            onClick={open ? closeCart : openCart}
+          >
             <img src="/svgs/cart-icon.svg" alt="" />
           </button>
         </section>

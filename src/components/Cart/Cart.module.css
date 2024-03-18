@@ -1,6 +1,7 @@
 .wrapper {
   padding: 55px 10px 10px 40px;
   width: 100%;
+  max-width: 360px;
   display: flex;
   gap: 10px;
   flex-direction: column;
@@ -34,6 +35,7 @@
 
 .buyButton {
   font-size: 18px;
+  text-align: center;
 }
 .wrap {
   animation: fadein 0.7s ease-in-out;
@@ -57,8 +59,6 @@
 .closeBtn:hover {
   color: var(--primary-color);
 }
-
-
 
 @keyframes fadein {
   from {
